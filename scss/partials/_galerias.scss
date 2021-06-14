@@ -1,0 +1,110 @@
+/*Se da formato a las galerias de  imagenes en gral*/
+.miGaleria{
+    width:$width-img-galeria;
+    padding-bottom: 12vh;
+    transition: width 0.8s, transform 0.5s;
+}
+
+// /*Se da formato a las imagenes de index*/
+// .galeriaPortada{
+//     width: 350px;
+//     padding-bottom: 12vh;
+//     transition: width 0.8s, transform 0.5s;
+// }
+
+.galeriaPortadaContainer{
+    display:inline-block;
+    margin-left: 8rem;
+    margin-bottom:10rem;
+    width: 1058px;
+
+    @media only screen and (max-width: 400px) {
+        width: 380px;
+        margin-left: 8px;
+        margin-bottom: 200px;
+      }
+
+      @media only screen and (min-width: 400px)and (max-width: 960px) {
+        width: 600px;
+        margin-left: 8px;
+        margin-bottom: 200px;
+      }
+}
+
+/*Se da formato a las Galeroias individuales*/
+.galeriaContainer{
+    @include flexbox(flex, center, space-evenly);
+    flex-wrap: wrap;
+    &:active .fondoZoom {
+        @include flexbox(flex, center, space-evenly);
+        position:fixed;
+        top:0;
+        left:0;
+        width:10000%;
+        height: 1000%;
+        z-index: 999;
+    }
+
+    @media only screen and (max-width: 400px) {
+        margin-top: 200px;
+        margin-left: 8px;
+        margin-bottom:200px;
+      }
+
+      @media only screen and (min-width: 400px)and (max-width: 960px) {
+        margin-top: 200px;
+        margin-left: 8px;
+        margin-bottom: 200px;
+      }
+}
+
+.fondoZoom{
+    display: none;
+}
+
+.galeriaItem{
+    @include flexbox(flex, unset, unset);
+    p{
+        display:none;
+    }
+    &:active img{  /*Se genera efecto zoom al mantener click en la imagen*/
+        position:fixed;
+        top: 3rem;
+        left: 25rem;
+        width: $width-img-galeria+( $width-img-galeria/2);/*PERDON, FUE LA UNICA MANERA DE METER UNA SUMA JAJA*/
+        z-index: 1000;
+    }
+
+  
+
+    &:hover p{
+        @include flexbox(flex, center, space-evenly);
+        z-index: 800;
+        Position:absolute;
+        text-shadow: 0.1rem 0.1rem gray;
+        @include text($txt-color, $font-family);
+        margin-top:10rem;
+        margin-left: 6rem;
+        opacity: 90%;
+    }
+
+    &:hover img{
+        transform: translate(1rem, -1rem);
+       
+    }
+    img{
+        @media only screen and (max-width: 400px) {
+            width: $width-img-galeria/1.8;
+          }
+    
+          @media only screen and (min-width: 400px)and (max-width: 960px) {
+            width: $width-img-galeria /1.5;
+          }
+
+    }
+
+  
+}
+
+
+

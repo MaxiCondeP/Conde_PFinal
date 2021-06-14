@@ -1,0 +1,32 @@
+footer{
+    /* background-image: url('img/head.jpg');
+    background-repeat:space;
+    background-size:cover; */
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    color: white;
+    font-size: 0.7rem;
+    margin-top: 3rem;
+    
+    p{
+        letter-spacing: 0.1rem;
+        word-spacing: 0.8rem;
+        display:block;
+        float: right;
+        padding:1rem;
+        margin-top: 1rem;
+    }
+
+    .miIconoRS:hover{  /*Efecto en íconos de footer*/
+        transform:translateY(-0.3rem);
+    }
+
+    // @media only screen and (max-width: 400px) {
+    //     margin-top: 400px;
+    //   }
+
+    //   @media only screen and (min-width: 400px)and (max-width: 960px) {
+    //     margin-top: 400px;
+    //   }
+}

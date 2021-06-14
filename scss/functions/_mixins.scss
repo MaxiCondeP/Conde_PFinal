@@ -1,0 +1,15 @@
+@mixin text($color, $family){
+    color:$color;
+    font-family: $family;
+}
+
+@mixin flexbox($display, $align-it, $just-content){
+    display: $display;
+    align-items: $align-it;
+    justify-content: $just-content;
+}
+
+@mixin logo($width, $heigth){
+    width: $width;
+    height: $heigth;
+}

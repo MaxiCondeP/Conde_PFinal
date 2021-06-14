@@ -1,0 +1,561 @@
+@charset "UTF-8";
+/*Se asigna fuente al proyecto*/
+html {
+  color: brown;
+  font-family: "Josefin Sans", "sans-serif";
+  font-size: 19px;
+  min-height: 100%;
+  position: relative;
+}
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/*Reseteo posicionamiento de elementos*/
+* {
+  Margin: 0;
+  padding: 0;
+}
+
+/*Se da estilo al cuerpo de la página*/
+body {
+  background-size: cover;
+  background-repeat: repeat;
+  background-image: linear-gradient(to bottom, #e1c949, #8d6f05);
+}
+
+/*Saca el subrayado en links*/
+.miLink {
+  text-decoration: none;
+}
+
+header {
+  background-image: linear-gradient(to bottom, #8d6f05, #e1c949);
+  background-repeat: space;
+  background-size: cover;
+  clear: both;
+  position: fixed;
+  top: 0px;
+  z-index: 1001;
+}
+
+.miMenuContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 400px) {
+  .miMenuContainer {
+    width: 450px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .miMenuContainer {
+    width: 1000px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.miMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 68rem;
+  opacity: 75%;
+}
+@media only screen and (max-width: 400px) {
+  .miMenu {
+    width: 400px;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .miMenu {
+    width: min-content;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.miMenuItem {
+  display: flex;
+  align-items: unset;
+  justify-content: unset;
+}
+
+/*Define estilo de menu principal*/
+.miEncabezado {
+  color: #eca63d;
+  font-family: "Josefin Sans", "sans-serif";
+  display: flex;
+  align-items: unset;
+  justify-content: unset;
+  text-shadow: 0.15rem 0.15rem brown;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.5s;
+}
+.miEncabezado:hover {
+  transform: scale(1.2);
+  opacity: 100%;
+  text-shadow: 0.15rem 0.15rem brown;
+  color: #eca63d;
+}
+.miEncabezado:active {
+  color: orange;
+  text-shadow: 0.25rem 0.25rem #f3db06;
+}
+@media only screen and (max-width: 400px) {
+  .miEncabezado {
+    font-size: 1rem;
+  }
+}
+
+footer {
+  /* background-image: url('img/head.jpg');
+  background-repeat:space;
+  background-size:cover; */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  font-size: 0.7rem;
+  margin-top: 3rem;
+}
+footer p {
+  letter-spacing: 0.1rem;
+  word-spacing: 0.8rem;
+  display: block;
+  float: right;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+footer .miIconoRS:hover {
+  /*Efecto en íconos de footer*/
+  transform: translateY(-0.3rem);
+}
+
+/*Se da estilo a íconos de de redes sociales*/
+.miIconoRS {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  float: left;
+  padding: 1rem;
+  box-sizing: content-box;
+  /*Se incluye para corregir defecto generado por Carusel*/
+}
+
+/*Se configura logo de header*/
+.miLogo {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 35px;
+  box-sizing: content-box;
+  /*Se incluye para corregir defecto generado por Carusel*/
+}
+
+/*Se configura logo de header al hacer click(efecto)*/
+.miLogoClick {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 35px;
+  display: none;
+}
+
+.modelLogo {
+  display: flex;
+  align-items: center;
+  justify-content: unset;
+}
+.modelLogo:hover .miLogo {
+  display: none;
+}
+.modelLogo:hover .miLogoClick {
+  display: block;
+}
+
+/*Se configura logo de footer*/
+.miLogoGris {
+  width: 2rem;
+  height: 2rem;
+  padding: 1rem;
+  margin-top: 0rem;
+  float: right;
+  box-sizing: content-box;
+  /*Se incluye para corregir defecto generado por Carusel*/
+  transition: 1s;
+}
+.miLogoGris:hover {
+  width: 3rem;
+  height: 3rem;
+}
+
+div div:hover ul {
+  display: inline-block;
+  font-family: "Josefin Sans", "sans-serif";
+  text-shadow: 0.15rem 0.15rem brown;
+  color: #eca63d;
+  background-image: linear-gradient(to bottom, #e1c949, #8d6f05);
+  margin-top: 50px;
+  margin-left: 0;
+  width: 8rem;
+}
+div div ul {
+  list-style: none;
+  font-size: 0;
+  position: absolute;
+  display: none;
+}
+div div ul li {
+  display: block;
+}
+
+.portadaContainer {
+  margin: 6rem 0rem 1rem 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: unset;
+}
+@media only screen and (max-width: 400px) {
+  .portadaContainer {
+    margin-left: 10px;
+    margin-top: 400px;
+    margin-bottom: 200px;
+    justify-content: left;
+    width: 250px;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .portadaContainer {
+    margin-left: 10px;
+    margin-top: 400px;
+    margin-bottom: 200px;
+    justify-content: left;
+    width: 250px;
+  }
+}
+
+.portadaItem {
+  display: flex;
+  align-items: unset;
+  justify-content: unset;
+  width: 450px;
+}
+@media only screen and (max-width: 400px) {
+  .portadaItem {
+    position: absolute;
+    display: flex;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .portadaItem {
+    margin-top: 10rem;
+    width: 600px;
+    position: absolute;
+    display: flex;
+  }
+}
+
+.imgPortada {
+  display: flex;
+  align-items: unset;
+  justify-content: unset;
+}
+@media only screen and (max-width: 400px) {
+  .imgPortada {
+    display: none;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .imgPortada {
+    display: none;
+  }
+}
+
+.parrafoPortada {
+  color: brown;
+  font-family: "Josefin Sans", "sans-serif";
+  text-shadow: 0.1rem 0.1rem #eca63d;
+}
+.parrafoPortada::first-letter {
+  font-size: 38px;
+  font-style: italic;
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .parrafoPortada {
+    font-size: 19px;
+  }
+}
+
+/*Se da formato a las galerias de  imagenes en gral*/
+.miGaleria {
+  width: 20rem;
+  padding-bottom: 12vh;
+  transition: width 0.8s, transform 0.5s;
+}
+
+.galeriaPortadaContainer {
+  display: inline-block;
+  margin-left: 8rem;
+  margin-bottom: 10rem;
+  width: 1058px;
+}
+@media only screen and (max-width: 400px) {
+  .galeriaPortadaContainer {
+    width: 380px;
+    margin-left: 8px;
+    margin-bottom: 200px;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .galeriaPortadaContainer {
+    width: 600px;
+    margin-left: 8px;
+    margin-bottom: 200px;
+  }
+}
+
+/*Se da formato a las Galeroias individuales*/
+.galeriaContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.galeriaContainer:active .fondoZoom {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10000%;
+  height: 1000%;
+  z-index: 999;
+}
+@media only screen and (max-width: 400px) {
+  .galeriaContainer {
+    margin-top: 200px;
+    margin-left: 8px;
+    margin-bottom: 200px;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .galeriaContainer {
+    margin-top: 200px;
+    margin-left: 8px;
+    margin-bottom: 200px;
+  }
+}
+
+.fondoZoom {
+  display: none;
+}
+
+.galeriaItem {
+  display: flex;
+  align-items: unset;
+  justify-content: unset;
+}
+.galeriaItem p {
+  display: none;
+}
+.galeriaItem:active img {
+  /*Se genera efecto zoom al mantener click en la imagen*/
+  position: fixed;
+  top: 3rem;
+  left: 25rem;
+  width: 30rem;
+  /*PERDON, FUE LA UNICA MANERA DE METER UNA SUMA JAJA*/
+  z-index: 1000;
+}
+.galeriaItem:hover p {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 800;
+  Position: absolute;
+  text-shadow: 0.1rem 0.1rem gray;
+  color: brown;
+  font-family: "Josefin Sans", "sans-serif";
+  margin-top: 10rem;
+  margin-left: 6rem;
+  opacity: 90%;
+}
+.galeriaItem:hover img {
+  transform: translate(1rem, -1rem);
+}
+@media only screen and (max-width: 400px) {
+  .galeriaItem img {
+    width: 11.1111111111rem;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .galeriaItem img {
+    width: 13.3333333333rem;
+  }
+}
+
+.nosotrosContainer {
+  margin-left: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 10rem;
+  display: grid;
+  grid-template-columns: 300px 600px 100px;
+}
+@media only screen and (max-width: 400px) {
+  .nosotrosContainer {
+    margin-left: 0;
+    grid-template-columns: 50px 225px 25px;
+    margin-left: 3rem;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .nosotrosContainer {
+    grid-template-columns: 200px 350px 50px;
+    margin-left: 0;
+    margin-left: 3rem;
+  }
+}
+
+.imgNosotros {
+  padding: 1rem;
+}
+@media only screen and (max-width: 400px) {
+  .imgNosotros {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    margin: 1rem;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .imgNosotros {
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    margin: 1rem;
+  }
+}
+
+.textNosotros {
+  color: brown;
+  font-family: "Josefin Sans", "sans-serif";
+  text-shadow: 0.1rem 0.1rem #eca63d;
+  margin: 2rem;
+}
+.textNosotros::first-letter {
+  font-size: 38px;
+  font-style: italic;
+}
+@media only screen and (max-width: 400px) {
+  .textNosotros {
+    margin-top: 10rem;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .textNosotros {
+    margin-top: 10rem;
+  }
+}
+
+.textPresentacion {
+  /*Color de texto provisorio, ya que posiblemte cambie el fondo*/
+  text-shadow: 0.1rem 0.1rem #eca63d;
+  color: brown;
+  font-family: "Josefin Sans", "sans-serif";
+  padding: 1rem;
+}
+@media only screen and (max-width: 400px) {
+  .textPresentacion {
+    font-size: 12.6666666667px;
+    margin-left: 3rem;
+    padding: 1rem;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .textPresentacion {
+    font-size: 19px;
+    margin-left: 3rem;
+    padding: 1rem;
+  }
+}
+
+.contactoContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: unset;
+  flex-direction: column;
+  margin-left: 3rem;
+}
+@media only screen and (max-width: 400px) {
+  .contactoContainer {
+    margin-left: 0;
+    margin-top: 100px;
+    margin-bottom: 300px;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .contactoContainer {
+    margin-left: 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
+
+.contactoItem {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.contactoItem label {
+  width: 9rem;
+}
+@media only screen and (max-width: 400px) {
+  .contactoItem label {
+    width: 5rem;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  .contactoItem label {
+    width: 5rem;
+  }
+}
+
+/*Se da estilo al cuerpo de los titulos*/
+.miTitulo {
+  color: brown;
+  font-family: "Josefin Sans", "sans-serif";
+  font-style: italic;
+  font-style: bold;
+  font-size: 2rem;
+  text-decoration: underline;
+  text-decoration-line: underline overline;
+  text-decoration-color: #eca63d;
+  padding: 1rem;
+  margin: 3rem 1rem 1rem 1rem;
+}
+
+/*Se da formato a los parrafos en gral*/
+.miParrafo {
+  color: brown;
+  font-family: "Josefin Sans", "sans-serif";
+  text-align: justify;
+  line-height: 1.6;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+/*Se da formato a los parrafos de index*/
+
+/*# sourceMappingURL=style.css.map */

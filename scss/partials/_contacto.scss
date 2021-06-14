@@ -1,0 +1,39 @@
+.contactoContainer{
+    @include flexbox(flex, flex-start, unset);
+    flex-direction: column;
+    margin-left: 3rem;
+    @media only screen and (max-width: 400px) {
+        margin-left:0;
+        margin-top: 100px;
+        margin-bottom:300px;
+      }
+
+      @media only screen and (min-width: 400px)and (max-width: 960px) {
+        margin-left:0;
+        margin-top: 100px;
+       margin-bottom: 100px;
+      }
+
+    
+}
+
+.contactoItem{
+    display:flex;
+    padding:0;
+    margin:0;
+    margin-bottom:1rem;
+
+    label{
+        width:9rem;
+        @media only screen and (max-width: 400px) {
+            width:5rem;
+          }
+    
+          @media only screen and (min-width: 400px)and (max-width: 960px) {
+            width:5rem;
+          }
+    }
+    
+    
+}
+

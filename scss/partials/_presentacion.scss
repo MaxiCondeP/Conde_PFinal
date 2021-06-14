@@ -1,0 +1,109 @@
+.nosotrosContainer{
+    // @include flexbox(flex, center, stretch);
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 10rem;
+    //  padding:1rem;
+    // width: 100%;
+    // flex-direction: column;
+
+    display: grid;
+    grid-template-columns: 300px 600px 100px;
+    @media only screen and (max-width: 400px) {
+        margin-left: 0;
+        grid-template-columns: 50px 225px 25px;
+        margin-left: 3rem;
+      }
+
+      @media only screen and (min-width: 400px)and (max-width: 960px) {
+        grid-template-columns: 200px 350px 50px;
+        margin-left:0;
+        margin-left: 3rem;
+      }
+
+}
+
+
+// .presentacionContainer{
+//     @include flexbox(flex, center, stretch);
+//     padding-bottom: 1rem;
+//     @media only screen and (max-width: 400px) {
+        
+//         margin-left: 0;
+//         width: 300px;
+//       }
+
+//       @media only screen and (min-width: 400px)and (max-width: 960px) {
+//         width: 600px;
+//         margin-left:0;
+//       }
+ 
+// }
+
+
+// .presentacionItem{
+//     @include flexbox(flex, unset, unset);
+// }
+
+.imgNosotros{
+    // @include flexbox(flex, unset, unset);
+    // width:10rem;
+    padding:1rem;
+
+    @media only screen and (max-width: 400px) {
+        width: 100px ;
+        height: 100px;
+        padding: 0;
+        margin:1rem;
+      }
+
+      @media only screen and (min-width: 400px)and (max-width: 960px) {
+        width: 200px;
+        height: 200px;
+        padding: 0;
+        margin: 1rem;
+      }
+}
+
+
+.textNosotros{
+  @include text($txt-color, $font-family);
+    text-shadow:$txt-shadow;
+    margin: 2rem; 
+    &::first-letter{
+        font-size: $txt-size*2;
+        font-style: italic;
+    }
+
+    @media only screen and (max-width: 400px) {
+      margin-top: 10rem;
+     
+    }
+
+    @media only screen and (min-width: 400px)and (max-width: 960px) {
+        margin-top: 10rem;
+        
+    }
+}
+
+
+.textPresentacion{/*Color de texto provisorio, ya que posiblemte cambie el fondo*/
+  text-shadow:$txt-shadow;
+  @include text($txt-color, $font-family);
+  padding:1rem;
+
+  @media only screen and (max-width: 400px) {
+    font-size: $txt-size/1.5;
+    margin-left:3rem;
+    padding:1rem;
+   
+  }
+
+  @media only screen and (min-width: 400px)and (max-width: 960px) {
+      font-size: $txt-size;
+      margin-left:3rem;
+      padding:1rem;
+      
+  }
+
+}

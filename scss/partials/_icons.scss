@@ -1,0 +1,50 @@
+/*Se da estilo a íconos de de redes sociales*/
+.miIconoRS{
+    @include logo(1.5rem, 1.5rem);
+    display:block;
+    float: left;
+    padding:1rem;
+    box-sizing: content-box;/*Se incluye para corregir defecto generado por Carusel*/
+}
+
+/*Se configura logo de header*/
+.miLogo{
+    @include logo(3rem, 3rem);
+    margin-left: 35px;
+    box-sizing: content-box;/*Se incluye para corregir defecto generado por Carusel*/
+}
+
+ /*Se configura logo de header al hacer click(efecto)*/
+ .miLogoClick{
+    @include logo(3rem, 3rem);
+    margin-left: 35px;
+    display:none;
+}
+
+.modelLogo{
+    @include flexbox(flex, center, unset);
+
+     &:hover .miLogo{
+        display:none;
+    }
+
+    &:hover .miLogoClick{
+        display:block;
+    }
+}
+
+/*Se configura logo de footer*/
+.miLogoGris{
+    @include logo(2rem, 2rem);
+    padding:1rem;
+    margin-top: 0rem;
+    float: right;
+    box-sizing: content-box;/*Se incluye para corregir defecto generado por Carusel*/
+    transition: 1s;
+    &:hover{
+        @include logo($width-logoGris+1rem, $width-logoGris+1rem);
+
+     }
+}
+
+

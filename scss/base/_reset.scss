@@ -1,0 +1,32 @@
+@import "../variables/variables";
+@import "../functions/mixins";
+
+
+/*Se asigna fuente al proyecto*/
+html{
+    @include text($txt-color, $font-family);
+    font-size: $txt-size;
+    min-height: 100%;
+    position: relative;
+
+    @media only screen and (min-width: 401px) and (max-width: 960px) {
+        font-size: 14px;
+    }
+}
+/*Reseteo posicionamiento de elementos*/
+* {
+    Margin:0;
+    padding:0;
+ }
+
+  /*Se da estilo al cuerpo de la página*/
+  body{
+    background-size: cover;
+    background-repeat: repeat;
+    background-image: $bgd-image;
+}
+
+/*Saca el subrayado en links*/
+.miLink{
+    text-decoration: none;
+}
