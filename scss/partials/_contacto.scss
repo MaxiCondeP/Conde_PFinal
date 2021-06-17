@@ -1,39 +1,166 @@
 .contactoContainer{
+  display: grid;
+  margin-bottom:200px;
+  margin-left: 1rem;
+  grid-template-columns: 700px 600px;
+
+  @media only screen and (max-width: 400px) {
+   
+    margin-left: 1rem;
+    margin-bottom:200px;
+    grid-template-columns: 370px;
+  }
+
+  @media only screen and (min-width: 400px)and (max-width: 960px) {
+    margin-left: 1rem;
+    margin-bottom:200px;
+    grid-template-columns: 440px 420px;
+  }
+  
+}
+
+.contactoItem{
+  margin-top:1.5rem;
+  background-color: rgb(111, 149, 170);
+  border-radius: 1rem;
+  @media only screen and (max-width: 400px) {
+    margin-top:0.5rem;
+    margin-bottom:2rem;
+  }
+  
+  @media only screen and (min-width: 400px)and (max-width: 960px) {
+    margin-top:0.5rem;
+  } 
+}
+
+.imgContacto{
+  height: 950px;
+  width: 640px;
+  margin-top: 2rem;
+  box-shadow: 10px 10px gray;
+
+  @media only screen and (max-width: 400px) {
+    width:300px;
+    height: 324px;
+  }
+  
+  @media only screen and (min-width: 400px)and (max-width: 960px) {
+    width:390px;
+   height: 422px;
+  } 
+}
+.contactoParrafo{
+  padding:2rem;
+  @include text($txt-color, $font-family-contacto);
+  font-size: 2rem;
+
+  
+  @media only screen and (max-width: 400px) {
+    padding:0;
+    font-size: $txt-size*0.9; 
+   
+  }
+
+  @media only screen and (min-width: 400px)and (max-width: 960px) {
+    padding:0;
+    font-size: $txt-size;  
+   
+  }
+}
+
+.formularioContainer{
     @include flexbox(flex, flex-start, unset);
     flex-direction: column;
-    margin-left: 3rem;
+    padding: 1rem;
+    padding-top:2rem;
+    
     @media only screen and (max-width: 400px) {
         margin-left:0;
-        margin-top: 100px;
-        margin-bottom:300px;
+        margin-top: 1rem;
+        margin-bottom:50px;
+        padding-top:0;
       }
 
       @media only screen and (min-width: 400px)and (max-width: 960px) {
         margin-left:0;
-        margin-top: 100px;
-       margin-bottom: 100px;
+        margin-top: 50px;
+       margin-bottom: 50px;
       }
 
-    
+
 }
 
-.contactoItem{
+.formularioItem{
     display:flex;
-    padding:0;
+    padding:0.3rem;
     margin:0;
-    margin-bottom:1rem;
 
     label{
-        width:9rem;
+
+        font-size: 1.5rem;
         @media only screen and (max-width: 400px) {
-            width:5rem;
+          font-size: 1rem;
           }
-    
+
           @media only screen and (min-width: 400px)and (max-width: 960px) {
-            width:5rem;
+            font-size: 1rem;
           }
     }
-    
-    
+    input{
+      font-size: 1.5rem;
+      width: 25rem;
+      @media only screen and (max-width: 400px) {
+        font-size: 1rem;
+        width: 15rem;
+        }
+
+        @media only screen and (min-width: 400px)and (max-width: 960px) {
+          font-size: 1rem;
+          width: 15rem;
+        }
+    }
+
+    input[type=submit] ,input[type=reset]{
+      margin-right:1rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      padding:1rem;
+      border-radius: 0.5rem; 
+      width: 8rem;
+      @media only screen and (max-width: 400px) {
+        margin-right:0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        padding:0.5rem;
+        border-radius: 0.5rem; 
+        width:4 rem;
+        }
+
+        @media only screen and (min-width: 400px)and (max-width: 960px) {
+          margin-right:0.5rem;
+          margin-bottom: 0.5rem;
+          font-size: 1rem;
+          padding:0.5rem;
+          border-radius: 0.5rem; 
+          width:4 rem;
+        }
+
+    }
+
+    textarea{
+      width: 25rem;
+      font-size: 1rem;
+      @media only screen and (max-width: 400px) {
+         width: 15rem;
+        }
+
+        @media only screen and (min-width: 400px)and (max-width: 960px) {
+          width: 15rem;
+        }
+
+    }
+
+
+
 }
 

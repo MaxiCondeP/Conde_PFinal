@@ -3,9 +3,9 @@ div {
       &:hover ul {
          display:inline-block;
          font-family: $font-family;
-         text-shadow: 0.15rem 0.15rem brown;
-         color: rgb(236, 166, 61);
-         background-image: linear-gradient(to bottom, #e1c949 ,  #8d6f05 );
+         text-shadow: $txt-shadow-header;
+         color: $txt-color-header;
+         background-color: rgb(70, 69, 69);
          margin-top: 50px;
          margin-left:0;
          width:8rem;

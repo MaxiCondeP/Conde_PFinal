@@ -6,27 +6,16 @@
     font-size: 2rem;
     text-decoration: underline;
     text-decoration-line: underline overline;
-    text-decoration-color: rgb(236, 166, 61);
+    text-decoration-color: black;
     padding: 1rem;
     margin:3rem 1rem 1rem 1rem;
     
    
 }
 
-/*Se da formato a los parrafos en gral*/
-.miParrafo{
-    @include text($txt-color, $font-family);
-    text-align: justify;
-    line-height: 1.6;
-    padding: 1rem;
-    margin:1rem;
-}
 
 
 
-
-
-/*Se da formato a los parrafos de index*/
 
      
 

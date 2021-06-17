@@ -5,20 +5,44 @@
     float: left;
     padding:1rem;
     box-sizing: content-box;/*Se incluye para corregir defecto generado por Carusel*/
+
+    @media only screen and (max-width: 400px) {
+      @include logo(1rem, 1rem);
+    }
+
+    @media only screen and (min-width: 400px)and (max-width: 960px) {
+      @include logo(1.5rem, 1.5rem);
+    }
 }
 
 /*Se configura logo de header*/
 .miLogo{
     @include logo(3rem, 3rem);
-    margin-left: 35px;
     box-sizing: content-box;/*Se incluye para corregir defecto generado por Carusel*/
+
+    @media only screen and (max-width: 400px) {
+      @include logo(1rem, 1rem);
+    }
+
+    @media only screen and (min-width: 400px)and (max-width: 960px) {
+      @include logo(1.5rem, 1.5rem);
+    }
 }
 
  /*Se configura logo de header al hacer click(efecto)*/
  .miLogoClick{
     @include logo(3rem, 3rem);
-    margin-left: 35px;
     display:none;
+
+    @media only screen and (max-width: 400px) {
+        @include logo(0.5rem, 0.5rem);
+        padding:0.5rem;
+      }
+  
+      @media only screen and (min-width: 400px)and (max-width: 960px) {
+        @include logo(1rem, 1rem);
+        padding:0.5rem;
+      }
 }
 
 .modelLogo{
@@ -31,6 +55,7 @@
     &:hover .miLogoClick{
         display:block;
     }
+
 }
 
 /*Se configura logo de footer*/
@@ -45,6 +70,13 @@
         @include logo($width-logoGris+1rem, $width-logoGris+1rem);
 
      }
+     @media only screen and (max-width: 400px) {
+      @include logo(1rem, 1rem);
+    }
+
+    @media only screen and (min-width: 400px)and (max-width: 960px) {
+      @include logo(1.5rem, 1.5rem);
+    }
 }
 
 

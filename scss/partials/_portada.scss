@@ -4,7 +4,7 @@
     
     @media only screen and (max-width: 400px) {
         margin-left: 10px;
-        margin-top: 400px;
+        margin-top: 8rem;
         margin-bottom: 200px;
         justify-content: left;
         width: 250px; 
@@ -12,7 +12,7 @@
 
       @media only screen and (min-width: 400px)and (max-width: 960px) {
         margin-left: 10px;
-        margin-top: 400px;
+        margin-top: 1rem;
         margin-bottom: 200px;
         justify-content: left;
         width: 250px;
@@ -40,7 +40,13 @@
 
 
 .imgPortada{
+    width: 100%;
+}
+
+.imgPortadatxt{
     @include flexbox(flex, unset, unset);
+    opacity: 35%;
+    border-radius: 0.5rem;
     @media only screen and (max-width: 400px) {
         display:none;
     }
@@ -58,7 +64,13 @@
         font-style: italic;
     }
 
-    @media only screen and (min-width: 400px)and (max-width: 960px) {
-        font-size: $txt-size;
+    @media only screen and (max-width: 400px) {
+        width: 370px;
+        font-size: 0.8rem;
     }
+    @media only screen and (min-width: 400px)and (max-width: 960px) {
+        font-size:1rem;
+    }
+
+   
 }

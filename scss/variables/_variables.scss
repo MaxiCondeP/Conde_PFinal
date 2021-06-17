@@ -1,13 +1,19 @@
 
 $txt-size:19px;
-$txt-color: brown;
-$txt-color-header:rgb(236, 166, 61);
-$txt-color-active:orange;
-$txt-shadow: 0.1rem 0.1rem rgb(236, 166, 61);
-$txt-shadow-hover:0.15rem 0.15rem brown;
-$txt-shadow-header: 0.15rem 0.15rem brown;
+$txt-color: black;
+$txt-color-header: black;
+$txt-color-active:white;
+$txt-shadow: 0.15rem 0.15rem white;
+$txt-shadow-hover: 0.15rem 0.15rem gray;
+$txt-shadow-active: 0.15rem 0.15rem black;
+$txt-shadow-header:  0.15rem 0.15rem white ;
 $font-family: 'Josefin Sans', 'sans-serif';
-$bgd-image:linear-gradient(to bottom, #e1c949 ,  #8d6f05);
+$font-family-header: 'Cinzel', serif;
+$font-family-nosotros: 'Caveat', cursive;
+$font-family-presenta: 'Source Sans Pro', sans-serif;
+$font-family-contacto: 'Viaoda Libre', cursive;
+// $bgd-image:linear-gradient(to bottom, rgb(77, 111, 116) ,  gray);
+$bgd-image:linear-gradient(to bottom,  white, rgb(60, 94, 99));
 $bgd-image-header: linear-gradient(to bottom,#8d6f05, #e1c949);
 $width-img-galeria:20rem;
 $width-logo:3rem;

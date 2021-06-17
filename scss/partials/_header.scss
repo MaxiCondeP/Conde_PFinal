@@ -1,24 +1,36 @@
 header{
-    background-image:$bgd-image-header;
     background-repeat:space;
     background-size:cover;
     clear: both;
     position: fixed;
     top:0px;
     z-index: 1001;
+    opacity: 85%;
+
+    @media only screen and (max-width: 400px) {
+      width: 400px;
+     
+      align-items:center;
+    }
+
+    @media only screen and (min-width: 400px)and (max-width: 960px) {
+      width: 960px;
+
+      align-items: center;
+    }
 }
 
 .miMenuContainer{
     @include flexbox(flex, center, space-between);
     @media only screen and (max-width: 400px) {
-        width: 450px;
-        flex-direction: column;
+        width: 400px;
+        // flex-direction: column;
         align-items:center;
       }
 
       @media only screen and (min-width: 400px)and (max-width: 960px) {
-        width: 1000px;
-        flex-direction: column;
+        width: 960px;
+        // flex-direction: column;
         align-items: center;
       }
 
@@ -26,33 +38,44 @@ header{
 }
 
 .miMenu{
-    @include flexbox(flex, center, space-evenly);
-    width: 68rem;
+    @include flexbox(flex, center, space-between);
+    width: 70rem;
     opacity: 75%;
 
     @media only screen and (max-width: 400px) {
-        width: 400px;
-        flex-direction: column;
+      width: 400px;
         justify-content: center;
       }
 
       @media only screen and (min-width: 400px)and (max-width: 960px) {
-        width: min-content;
-        flex-direction: column;
+        width: 960px;
         justify-content: center;
       }
 }
 
 .miMenuItem{
     @include flexbox(flex, unset,unset);
+     padding:0rem 2rem 0rem 2rem;
+     width: 15rem;
+
+   
+    @media only screen and (max-width: 400px) {
+      width: 80px;
+        justify-content: center;
+      }
+
+      @media only screen and (min-width: 400px)and (max-width: 960px) {
+        width: 200px;
+        justify-content: center;
+      }
     }
 
 /*Define estilo de menu principal*/
 .miEncabezado{
-    @include text($txt-color-header, $font-family);
+    @include text($txt-color-header, $font-family-header);
     @include flexbox(flex, unset, unset);
     text-shadow:$txt-shadow-header;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     text-decoration: none;
     text-align: center;
@@ -66,11 +89,14 @@ header{
 
     &:active{
         color: $txt-color-active;
-        text-shadow: 0.25rem 0.25rem rgb(243, 219, 6);
+        text-shadow:$txt-shadow-active;
       }
 
 
       @media only screen and (max-width: 400px) {
+        font-size: 0.5rem;
+      }
+      @media only screen and (min-width: 400px)and (max-width: 960px) {
         font-size: 1rem;
       }
 

@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="keywords" content="Fotógrafo, fotografía, analógica, prints, galería, imágenes, contacto, email, consulta">
+    <meta name="keywords"
+        content="Fotógrafo, fotografía, analógica, prints, galería, imágenes, contacto, email, consulta">
 
-    <meta name="description" content="Sitio de fotógrafos marplatenses dedicados a la fotografía analógica. Contacto y sugerencias.">
+    <meta name="description"
+        content="Sitio de fotógrafos marplatenses dedicados a la fotografía analógica. Contacto y sugerencias.">
 
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 
     <title>-CONTACTO-Fotografía Analógica MDP- *Dejanos tu consulta*</title>
 </head>
+
 <body>
   <!--ENCABEZADO-->
-  <header class="miMenuContainer"> 
+  <header class="miMenuContainer">
     <!--MENU INICIAL-->
-    <div class="modelLogo" >
-        <img src="Images/icon/CAM1.svg" alt="Icono cámara" class="miLogo" >
-        <img src="Images/icon/CAM1click.svg" alt="Icono cámara" class="miLogoClick" >
-       </div>
+
     <div class="miMenu">
-       
-       <div  class="miMenuItem"><a href="index.html" class="miEncabezado">Home</a></div>
-       <div class="miMenuItem miEncabezado" >Galerias<!--SUBMENU-->
-           <ul>
-               <li ><a href="galeria.html"class="miEncabezado">PH1</a></li>
-               <li  ><a href="galeria2.html"class="miEncabezado">PH2</a></li>
-           </ul>
-       </div>
-       <div class="miMenuItem"><a href="nosotros.html"class="miEncabezado">Nosotros</a></div>
-       <div class="miMenuItem"><a href="tienda.html"class="miEncabezado">Tienda</a></div>
-       <div class="miMenuItem"><a href="contacto.html"class="miEncabezado">Contacto</a></div>
+      <div class="miMenuItem"><a href="index.html" class="miEncabezado">Home</a></div>
+      <div class="miMenuItem miEncabezado">Galerias
+        <!--SUBMENU-->
+        <ul>
+          <li><a href="galeria.html" class="miEncabezado">PH1</a></li>
+          <li><a href="galeria2.html" class="miEncabezado">PH2</a></li>
+        </ul>
+      </div>
+      <div class="modelLogo">
+        <img src="Images/icon/CAM1.svg" alt="Icono cámara" class="miLogo">
+        <img src="Images/icon/CAM1click.svg" alt="Icono cámara" class="miLogoClick">
+      </div>
+      <div class="miMenuItem"><a href="nosotros.html" class="miEncabezado">Nosotros</a></div>
+      <div class="miMenuItem"><a href="contacto.html" class="miEncabezado">Contacto</a></div>
     </div>
   </header>
 
@@ -44,54 +52,75 @@
         Contacto
     </h1>
 
-    
-
-            <form  class="contactoContainer"action=""><!--Formularo de contacto-->
-                <p class="miParrafo">
-                    Podés escribirnos en nuestras redes, o a traves de ph1234@gmail.com.
-                    O dejanos tus datos y consulta o sugerencia a través del siguiente formuario, y nos pondremos en contacto :)            
+    <div class="contactoContainer">
+        <div>
+            <img src="Images/fotoContacto.jpg" alt="" class="imgContacto">
+        </div>
+        <div class="contactoItem">
+            <form class="formularioContainer" action="">
+                <!--Formularo de contacto-->
+                <p class="contactoParrafo">
+                    Dejanos tus datos y consulta o sugerencia a través del siguiente formuario.
+                    O escribirnos a mdp-analógica@gmail.com, y nos contactamos con vos.
+                   
                 </p>
-            <div class="contactoItem">
-                <label for="nombreApellido">Nombre y Apellido</label>
-                <input type="text"/> 
-            </div>
-            <div class="contactoItem">
-                <label for="email">Email</label>
-                <input type="email"/>
-            </div>
-            <div class="contactoItem">
-                <label for="consulta">Consulta</label>
-                <textarea cols="30" rows="10"></textarea>
-            </div>
-            <div class="contactoItem">
-                <input type="submit" value="Enviar">
-                <input type="reset" value="Limpiar">
-            </div>
-        </form>
+                <div class="formularioItem">
+                    <label for="nombreApellido">Nombre y Apellido:</label>
+                </div>
+                <div class="formularioItem">
+                    <input type="text" />
+                </div>
+                <div class="formularioItem">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="formularioItem">
+                  <input type="email" />
+                </div> 
+                
+                <div class="formularioItem">
+                    <label for="consulta">Consulta:</label>
+                </div>  
+                <div class="formularioItem">
+                    <textarea cols="60" rows="10"></textarea>
+                </div>
+                <div class="formularioItem">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Limpiar">
+                </div>
+            </form>
+
+        </div>
+
+    </div>
 
 
 
-        <footer>
-            <!--LINKS REDES SOCIALES -->
-            <a href="https://www.facebook.com/" class="miLink">
-                <img src="Images/icon/FB-ICON.svg" alt="Facebook" class="miIconoRS">
-             </a>
-    
-             <a href="https://www.instagram.com/" class="miLink">
-                 <img src="Images/icon/IG-ICON.svg" alt="Instagram"class="miIconoRS">
-              </a>
-    
-              <a href="https://www.twitter.com/" class="miLink">
-                 <img src="Images/icon/TW-ICON.svg" alt="Twitter"class="miIconoRS">
-              </a>    
-                 <!--Espacio para logo grisado-->
-             <img src="Images\icon\CAM1g.svg" alt="Icono secundario" class="miLogoGris" >
-                 <!-- Texto derechos(?)-->
-             <p>©Maximiliano Conde Paccelli  (2021)</p>
-        </footer>
-    
+
+
+
+
+    <footer>
+        <!--LINKS REDES SOCIALES -->
+        <a href="https://www.facebook.com/" class="miLink">
+            <img src="Images/icon/FB-ICON.svg" alt="Facebook" class="miIconoRS">
+        </a>
+
+        <a href="https://www.instagram.com/" class="miLink">
+            <img src="Images/icon/IG-ICON.svg" alt="Instagram" class="miIconoRS">
+        </a>
+
+        <a href="https://www.twitter.com/" class="miLink">
+            <img src="Images/icon/TW-ICON.svg" alt="Twitter" class="miIconoRS">
+        </a>
+        <!--Espacio para logo grisado-->
+        <img src="Images\icon\CAM1g.svg" alt="Icono secundario" class="miLogoGris">
+        <!-- Texto derechos(?)-->
+        <p>©Maximiliano Conde Paccelli (2021)</p>
+    </footer>
+
 
 
 
 </body>
+
 </html>
