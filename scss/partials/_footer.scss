@@ -16,17 +16,12 @@ footer{
         float: right;
         padding:1rem;
         margin-top: 1rem;
+      
     }
 
     .miIconoRS:hover{  /*Efecto en íconos de footer*/
         transform:translateY(-0.3rem);
     }
 
-    // @media only screen and (max-width: 400px) {
-    //     margin-top: 400px;
-    //   }
 
-    //   @media only screen and (min-width: 400px)and (max-width: 960px) {
-    //     margin-top: 400px;
-    //   }
 }
