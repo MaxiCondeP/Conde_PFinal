@@ -16,7 +16,7 @@
   @media only screen and (min-width: 400px)and (max-width: 960px) {
     margin-left: 1rem;
     margin-bottom: 1rem;
-    grid-template-columns: 440px 420px;
+    grid-template-columns: 440px;
   }
   
 
@@ -80,15 +80,15 @@ box-shadow: 10px 10px gray;
   display: grid;
   grid-template-columns: 360px 740px 140px;
   @media only screen and (max-width: 400px) {
-     width: 390px;
+    width: 100%;
       margin-left: 0;
-      grid-template-columns: 50px 225px 25px;
+      grid-template-columns: 390px;
       margin-left: 1.5rem;
     }
 
     @media only screen and (min-width: 400px)and (max-width: 960px) {
-      width: 700px;
-      grid-template-columns: 200px 350px 50px;
+      width: 100%;
+      grid-template-columns: 420px;
       margin-left:0;
       margin-left: 3rem;
     }

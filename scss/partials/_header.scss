@@ -6,15 +6,16 @@ header{
     top:0px;
     z-index: 1001;
     opacity: 85%;
+    width:100%;
 
     @media only screen and (max-width: 400px) {
-      width: 400px;
+     
      
       align-items:center;
     }
 
     @media only screen and (min-width: 400px)and (max-width: 960px) {
-      width: 960px;
+    
 
       align-items: center;
     }
@@ -22,15 +23,17 @@ header{
 
 .miMenuContainer{
     @include flexbox(flex, center, space-between);
+    width:100%;
     @media only screen and (max-width: 400px) {
-        width: 400px;
-        // flex-direction: column;
+      @include flexbox(flex, center, space-around);
+       
+      
         align-items:center;
       }
 
       @media only screen and (min-width: 400px)and (max-width: 960px) {
-        width: 960px;
-        // flex-direction: column;
+       
+        @include flexbox(flex, center, space-around);
         align-items: center;
       }
 
@@ -39,16 +42,16 @@ header{
 
 .miMenu{
     @include flexbox(flex, center, space-between);
-    width: 70rem;
+    width:100%;
     opacity: 75%;
 
     @media only screen and (max-width: 400px) {
-      width: 400px;
+     
         justify-content: center;
       }
 
       @media only screen and (min-width: 400px)and (max-width: 960px) {
-        width: 960px;
+      
         justify-content: center;
       }
 }
@@ -60,12 +63,12 @@ header{
 
    
     @media only screen and (max-width: 400px) {
-      width: 80px;
+      width: 5rem;
         justify-content: center;
       }
 
       @media only screen and (min-width: 400px)and (max-width: 960px) {
-        width: 200px;
+        width: 10rem;
         justify-content: center;
       }
     }
