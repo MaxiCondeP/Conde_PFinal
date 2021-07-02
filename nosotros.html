@@ -21,42 +21,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
-    
+
+    <!--JS para menu responsive-->
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+
+
     <title>-NOSOTROS-Fotografía Analógica MDP- *Nuestra historia*</title>
 </head>
 
 <body>
 
     <!--ENCABEZADO-->
-    <header class="miMenuContainer">
-        <!--MENU INICIAL-->
 
-        <div class="miMenu">
-            <div class="miMenuItem"><a href="index.html" class="miEncabezado">Home</a></div>
-            <div class="miMenuItem miEncabezado">Galerias
-                <!--SUBMENU-->
-                <ul>
-                    <li><a href="galeria.html" class="miEncabezado">PH1</a></li>
-                    <li><a href="galeria2.html" class="miEncabezado">PH2</a></li>
-                </ul>
+    <header>
+        <div class="miMenuContainer">
+            <div class="logoMenu">
+                <img src="Images/icon/menu.svg" alt="Boton de menú" class="miLogoMenu">
             </div>
-            <div class="modelLogo">
-                <img src="Images/icon/CAM1.svg" alt="Icono cámara" class="miLogo">
-                <img src="Images/icon/CAM1click.svg" alt="Icono cámara" class="miLogoClick">
+            <!--MENU INICIAL-->
+            <div class="miMenu">
+                <div class="miMenuItem"><a href="index.html" class="miEncabezado">HOME</a></div>
+                <div class="miMenuItem"><span class="miEncabezado">GALERIAS</span>
+                    <!--SUBMENU-->
+                    <ul>
+                        <li><a href="galeria.html" class="miEncabezado">MAXI</a></li>
+                        <li><a href="galeria2.html" class="miEncabezado">RICARDO</a></li>
+                    </ul>
+                </div>
+                <div class="miMenuItem"><a href="nosotros.html" class="miEncabezado">NOSOTROS</a></div>
+                <div class="miMenuItem"><a href="contacto.html" class="miEncabezado">CONTACTO</a></div>
             </div>
-            <div class="miMenuItem"><a href="nosotros.html" class="miEncabezado">Nosotros</a></div>
-            <div class="miMenuItem"><a href="contacto.html" class="miEncabezado">Contacto</a></div>
+
         </div>
+        <div class="modelLogo">
+            <img src="Images/icon/LOGOcort.png" alt="Logotipo" class="miLogo">
+        </div>
+
+
     </header>
 
 
-    
     <h1 class="miTitulo">Nosotros</h1>
 
 
     <div class="nosotrosContainer">
         <div>
-            <img src="Images/fotoNosotros.jpg" alt="" class="imgNosotros"> 
+            <img src="Images/fotoNosotros.jpg" alt="" class="imgNosotros">
         </div>
         <div class="textNosotros">
             <!--Presentacion-->
@@ -71,7 +83,7 @@
     </div>
 
 
-    
+
 
 
     <div class="presentacionContainer">
@@ -79,13 +91,13 @@
             <img class="imgPresentacion" src="Images\ph\PH1.jpg" alt="Perfil PH1">
         </div>
         <div class="presentacionItem">
-            <p class="textPresentacion">Mi nombre es  Maximiliano,
-                tengo 31 años y siempre me interesó la fotografía, 
-                aunque nunca me animé a explorarla realmente. 
+            <p class="textPresentacion">Mi nombre es Maximiliano,
+                tengo 31 años y siempre me interesó la fotografía,
+                aunque nunca me animé a explorarla realmente.
                 Sacaba fotos con el celular y las editaba porque me gustaba, pero jamás miré mas allá.
-                Hasta que un día mi amigo Ricardo me prestó su cámara, 
-                haciéndome conocer este hermoso mundo de lo analógico. 
-                Hoy es parte de mi día a día tener la cámara encima para capturar todo lo que se me cruce en el camino. 
+                Hasta que un día mi amigo Ricardo me prestó su cámara,
+                haciéndome conocer este hermoso mundo de lo analógico.
+                Hoy es parte de mi día a día tener la cámara encima para capturar todo lo que se me cruce en el camino.
                 Espero que disfrutes tanto mis fotos como yo disfruté de tomarlas.</p>
         </div>
         <div class="presentacionItem">
@@ -97,12 +109,12 @@
             <img class="imgPresentacion" src="Images\ph\PH2.jpg" alt="Perfil PH2">
         </div>
         <div class="presentacionItem">
-            <p class="textPresentacion">Soy Ricardo, tengo 32 años y saco fotos hace no muchos años. 
-                La verdad nunca tuve demasiado interés en la fotografía, 
-                pero el empezar a viajar me hizo querer recordar los lugares que conocia. 
+            <p class="textPresentacion">Soy Ricardo, tengo 32 años y saco fotos hace no muchos años.
+                La verdad nunca tuve demasiado interés en la fotografía,
+                pero el empezar a viajar me hizo querer recordar los lugares que conocia.
                 Le saqué una camara a mi hermana y desde ahi nunca me la descolgué.
-                Hoy tengo la costumbre de ver mundo a traves de un lente, 
-                por alguna razon a veces al volver a ver las imagenes, 
+                Hoy tengo la costumbre de ver mundo a traves de un lente,
+                por alguna razon a veces al volver a ver las imagenes,
                 encuentro que me cuentan historias que no sabía que estaban ahí.</p>
         </div>
         <div class="presentacionItem">
@@ -138,6 +150,10 @@
         <p>©Maximiliano Conde Paccelli (2021)</p>
     </footer>
 
+
+    <!--JS para menu responsive-->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 
 </html>

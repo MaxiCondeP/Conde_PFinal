@@ -22,47 +22,61 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <!--JS para menu responsive-->
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+
+
     <title>-CONTACTO-Fotografía Analógica MDP- *Dejanos tu consulta*</title>
 </head>
 
 <body>
-  <!--ENCABEZADO-->
-  <header class="miMenuContainer">
-    <!--MENU INICIAL-->
+    <!--ENCABEZADO-->
 
-    <div class="miMenu">
-      <div class="miMenuItem"><a href="index.html" class="miEncabezado">Home</a></div>
-      <div class="miMenuItem miEncabezado">Galerias
-        <!--SUBMENU-->
-        <ul>
-          <li><a href="galeria.html" class="miEncabezado">PH1</a></li>
-          <li><a href="galeria2.html" class="miEncabezado">PH2</a></li>
-        </ul>
-      </div>
-      <div class="modelLogo">
-        <img src="Images/icon/CAM1.svg" alt="Icono cámara" class="miLogo">
-        <img src="Images/icon/CAM1click.svg" alt="Icono cámara" class="miLogoClick">
-      </div>
-      <div class="miMenuItem"><a href="nosotros.html" class="miEncabezado">Nosotros</a></div>
-      <div class="miMenuItem"><a href="contacto.html" class="miEncabezado">Contacto</a></div>
-    </div>
-  </header>
+    <header>
+        <div class="miMenuContainer">
+            <div class="logoMenu">
+                <img src="Images/icon/menu.svg" alt="Boton de menú" class="miLogoMenu">
+            </div>
+            <!--MENU INICIAL-->
+            <div class="miMenu">
+                <div class="miMenuItem"><a href="index.html" class="miEncabezado">HOME</a></div>
+                <div class="miMenuItem"><span class="miEncabezado">GALERIAS</span>
+                    <!--SUBMENU-->
+                    <ul>
+                        <li><a href="galeria.html" class="miEncabezado">MAXI</a></li>
+                        <li><a href="galeria2.html" class="miEncabezado">RICARDO</a></li>
+                    </ul>
+                </div>
+                <div class="miMenuItem"><a href="nosotros.html" class="miEncabezado">NOSOTROS</a></div>
+                <div class="miMenuItem"><a href="contacto.html" class="miEncabezado">CONTACTO</a></div>
+            </div>
 
+        </div>
+        <div class="modelLogo">
+            <img src="Images/icon/LOGOcort.png" alt="Logotipo" class="miLogo">
+        </div>
+
+
+    </header>
     <h1 class="miTitulo">
         Contacto
     </h1>
 
     <div class="contactoContainer">
+        <div class="contactoItem">
         <div>
             <img src="Images/fotoContacto.jpg" alt="" class="imgContacto">
         </div>
+          </div>  
         <div class="contactoItem">
             <form class="formularioContainer" action="">
                 <!--Formularo de contacto-->
                 <p class="contactoParrafo">
                     Dejanos tus datos y consulta o sugerencia a través del siguiente formuario.
                     O escribirnos a mdp-analógica@gmail.com, y nos contactamos con vos.
-                   
+
                 </p>
                 <div class="formularioItem">
                     <label for="nombreApellido">Nombre y Apellido:</label>
@@ -74,12 +88,12 @@
                     <label for="email">Email:</label>
                 </div>
                 <div class="formularioItem">
-                  <input type="email" />
-                </div> 
-                
+                    <input type="email" />
+                </div>
+
                 <div class="formularioItem">
                     <label for="consulta">Consulta:</label>
-                </div>  
+                </div>
                 <div class="formularioItem">
                     <textarea cols="60" rows="10"></textarea>
                 </div>
@@ -121,6 +135,10 @@
 
 
 
+
+    <!--JS para menu responsive-->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 
 </html>

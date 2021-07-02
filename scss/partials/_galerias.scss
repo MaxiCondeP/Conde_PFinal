@@ -1,109 +1,63 @@
-/*Se da formato a las galerias de  imagenes en gral*/
-.miGaleria{
-    width:$width-img-galeria;
-    padding-bottom: 12vh;
-    transition: width 0.8s, transform 0.5s;
-}
 
-// /*Se da formato a las imagenes de index*/
-// .galeriaPortada{
-//     width: 350px;
-//     padding-bottom: 12vh;
-//     transition: width 0.8s, transform 0.5s;
-// }
-
+/*Container del carrousel*/
 .galeriaPortadaContainer{
-    display:inline-block;
-    margin-left: 8rem;
-    margin-bottom:10rem;
-    width: 1058px;
+    display:flex;
+    width: 100%;
+    margin-bottom:2rem;
 
-    @media only screen and (max-width: 400px) {
-        width: 380px;
-        margin-left: 8px;
-        margin-bottom: 200px;
-      }
-
-      @media only screen and (min-width: 400px)and (max-width: 960px) {
-        width: 600px;
-        margin-left: 8px;
-        margin-bottom: 200px;
-      }
 }
 
-/*Se da formato a las Galeroias individuales*/
+/*Se da formato a las Galerias individuales*/
 .galeriaContainer{
-    @include flexbox(flex, center, space-evenly);
-    flex-wrap: wrap;
-    &:active .fondoZoom {
-        @include flexbox(flex, center, space-evenly);
-        position:fixed;
-        top:0;
-        left:0;
-        width:10000%;
-        height: 1000%;
-        z-index: 999;
-    }
-
-    @media only screen and (max-width: 400px) {
-        margin-top: 200px;
-        margin-left: 8px;
-        margin-bottom:200px;
-      }
-
-      @media only screen and (min-width: 400px)and (max-width: 960px) {
-        margin-top: 200px;
-        margin-left: 8px;
-        margin-bottom: 200px;
-      }
-}
-
-.fondoZoom{
-    display: none;
+    display:grid;
+    grid-auto-flow: dense;/*Llena todos los espacios en caso de tener elementos de diferente tamaño*/
+    grid-template-columns: repeat(auto-fill , minmax(20rem, 1fr));/*Me genera cant de columnas acorde a tamaño de pantalla*/
+    grid-auto-rows:10rem;
+    grid-gap:1rem;
+    padding:2rem; 
+    margin-bottom:2rem;
 }
 
 .galeriaItem{
-    @include flexbox(flex, unset, unset);
+    // @include flexbox(flex, unset, unset);
+    position: relative;
     p{
         display:none;
     }
-    &:active img{  /*Se genera efecto zoom al mantener click en la imagen*/
-        position:fixed;
-        top: 3rem;
-        left: 25rem;
-        width: $width-img-galeria+( $width-img-galeria/2);/*PERDON, FUE LA UNICA MANERA DE METER UNA SUMA JAJA*/
+   /*Se genera efecto zoom al mantener click en la imagen*/
+    &:active {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top:0;
+        left:0;
+        padding-left:25%;
         z-index: 1000;
+        background: linear-gradient(rgba(158, 153, 153, 0.1), rgba(0,0,0,1));
+        img{
+            width: 50%;
+            z-index: 1000;
+           
+            }    
     }
 
   
-
-    &:hover p{
-        @include flexbox(flex, center, space-evenly);
-        z-index: 800;
-        Position:absolute;
-        text-shadow: 0.1rem 0.1rem gray;
-        @include text($txt-color, $font-family);
-        margin-top:10rem;
-        margin-left: 6rem;
-        opacity: 90%;
-    }
-
-    &:hover img{
-        transform: translate(1rem, -1rem);
-       
-    }
     img{
-        @media only screen and (max-width: 400px) {
-            width: $width-img-galeria/1.8;
-          }
-    
-          @media only screen and (min-width: 400px)and (max-width: 960px) {
-            width: $width-img-galeria /1.5;
-          }
-
+        &:hover{
+            transform: translate(1rem, -1rem);
+            cursor: pointer;   
+        }
     }
 
   
+}
+
+.miGaleria{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    transition: width 0.8s, transform 0.5s;
+
 }
 
 

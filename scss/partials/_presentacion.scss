@@ -42,7 +42,7 @@ box-shadow: 10px 10px gray;
     text-shadow:$txt-shadow;
     font-size: $txt-size*2;
     font-family: $font-family-nosotros;
-    background-color: rgb(91, 126, 146);
+    background-color: rgb(121, 65, 52);
     border-radius: 1rem;
    
     padding: 3rem 1rem 1rem 1rem ;
@@ -68,7 +68,7 @@ box-shadow: 10px 10px gray;
 
 
 .presentacionContainer{
-  box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem  rgb(91, 126, 146);
+  box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem  rgb(121, 65, 52);
   margin-left: 3rem;
   margin-bottom: 10rem;
   width: 1220px;
@@ -109,10 +109,10 @@ box-shadow: 10px 10px gray;
      }
 }
 
-.textPresentacion{/*Color de texto provisorio, ya que posiblemte cambie el fondo*/
+.textPresentacion{
   @include text($txt-color, $font-family-presenta);
   font-size: $txt-size*1.5;
-  box-shadow: 5px 10px grey;
+  box-shadow: 5px 10px rgb(121, 65, 52);
 
   @media only screen and (max-width: 400px) {
     font-size: $txt-size/1.5;

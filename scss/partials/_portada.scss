@@ -1,6 +1,7 @@
 .portadaContainer{
     margin: 6rem 0rem 1rem 8rem;
     @include flexbox(flex, center, unset);
+    position:relative;
     
     @media only screen and (max-width: 400px) {
         margin-left: 10px;
@@ -24,14 +25,8 @@
 .portadaItem{
     @include flexbox(flex, unset, unset);
     width: 450px;
-    @media only screen and (max-width: 400px) {
-        width: 100%;
-        position:absolute;
-        display:flex;
-      }
-      @media only screen and (min-width: 400px)and (max-width: 960px) {
+    @media only screen and (max-width: 960px) {
         margin-top:15rem;
-        width: 100%;
         position:absolute;
         display:flex;
       }
@@ -42,6 +37,16 @@
 .imgPortada{
     width: 100%;
     
+}
+
+.logoPortada{
+    width: 25%;
+    margin:4rem;
+    right:0;
+    position: absolute;
+    @media only screen and (max-width: 960px) {
+        padding-top:2rem;
+      }
 }
 
 .imgPortadatxt{
@@ -58,6 +63,7 @@
 }
 
 .parrafoPortada{
+   
     @include text($txt-color, $font-family);
     text-shadow:$txt-shadow;
     &::first-letter{

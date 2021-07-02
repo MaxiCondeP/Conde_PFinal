@@ -1,27 +1,31 @@
 .contactoContainer{
+  width: 100%;
   display: grid;
-  margin-bottom:200px;
-  margin-left: 1rem;
-  grid-template-columns: 700px 600px;
+  // margin-bottom:2rem;
+  // margin-left: 1rem;
+  // grid-template-columns: 700px 600px;
+    grid-template-columns: 45% 45%;
+    grid-auto-rows:50rem;
+    grid-gap:1rem;
+    padding:2rem; 
+    margin-bottom:2rem;
 
-  @media only screen and (max-width: 400px) {
-   
-    margin-left: 1rem;
-    margin-bottom:200px;
-    grid-template-columns: 370px;
+  @media only screen and (max-width: 960px) {
+    grid-template-columns: 80%;
+    grid-auto-rows:45rem;
   }
 
-  @media only screen and (min-width: 400px)and (max-width: 960px) {
-    margin-left: 1rem;
-    margin-bottom:200px;
-    grid-template-columns: 440px;
-  }
+  // @media only screen and (min-width: 400px)and (max-width: 960px) {
+  //   margin-left: 1rem;
+  //   margin-bottom:2rem;
+  //   grid-template-columns: 440px;
+  // }
   
 }
 
 .contactoItem{
   margin-top:1.5rem;
-  background-color: rgb(111, 149, 170);
+  background-color: rgb(121, 65, 52);
   border-radius: 1rem;
   @media only screen and (max-width: 400px) {
     margin-top:0.5rem;
@@ -34,38 +38,20 @@
 }
 
 .imgContacto{
-  height: 950px;
-  width: 640px;
-  margin-top: 2rem;
+  width: 100%;
+  object-fit: cover;
   box-shadow: 10px 10px gray;
-
-  @media only screen and (max-width: 400px) {
-    width:300px;
-    height: 324px;
-  }
-  
-  @media only screen and (min-width: 400px)and (max-width: 960px) {
-    width:390px;
-   height: 422px;
-  } 
 }
 .contactoParrafo{
   padding:2rem;
   @include text($txt-color, $font-family-contacto);
   font-size: 2rem;
 
-  
-  @media only screen and (max-width: 400px) {
-    padding:0;
-    font-size: $txt-size*0.9; 
-   
+  @media only screen and (max-width: 960px) {
+    font-size: 1.5rem;
   }
+ 
 
-  @media only screen and (min-width: 400px)and (max-width: 960px) {
-    padding:0;
-    font-size: $txt-size;  
-   
-  }
 }
 
 .formularioContainer{
@@ -73,19 +59,20 @@
     flex-direction: column;
     padding: 1rem;
     padding-top:2rem;
+    width: 100%;
     
-    @media only screen and (max-width: 400px) {
-        margin-left:0;
-        margin-top: 1rem;
-        margin-bottom:50px;
-        padding-top:0;
-      }
+    // @media only screen and (max-width: 400px) {
+    //     margin-left:0;
+    //     margin-top: 1rem;
+    //     margin-bottom:50px;
+    //     padding-top:0;
+    //   }
 
-      @media only screen and (min-width: 400px)and (max-width: 960px) {
-        margin-left:0;
-        margin-top: 50px;
-       margin-bottom: 50px;
-      }
+    //   @media only screen and (min-width: 400px)and (max-width: 960px) {
+    //     margin-left:0;
+    //     margin-top: 50px;
+    //    margin-bottom: 50px;
+    //   }
 
 
 }

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*Se asigna fuente al proyecto*/
 html {
-  color: black;
+  color: white;
   font-family: "Josefin Sans", "sans-serif";
   font-size: 19px;
   min-height: 100%;
@@ -28,7 +28,7 @@ html {
 body {
   background-size: cover;
   background-repeat: repeat;
-  background-image: linear-gradient(to bottom, white, #3c5e63);
+  background-image: linear-gradient(to bottom, #0c0c0c, #eb7617);
 }
 
 /*Saca el subrayado en links*/
@@ -40,8 +40,6 @@ header {
   background-repeat: space;
   background-size: cover;
   clear: both;
-  position: fixed;
-  top: 0px;
   z-index: 1001;
   opacity: 85%;
   width: 100%;
@@ -62,23 +60,20 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: 2rem;
+  position: fixed;
+  top: 0;
+  justify-content: left;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 960px) {
   .miMenuContainer {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
-    align-items: center;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .miMenuContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    align-items: center;
+    width: 90%;
+    height: 100%;
+    align-items: flex-start;
+    opacity: 100%;
   }
 }
 
@@ -86,17 +81,21 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: linear-gradient(rgba(39, 36, 36, 0.5), rgba(145, 99, 47, 0.5));
   width: 100%;
   opacity: 75%;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 960px) {
   .miMenu {
-    justify-content: center;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .miMenu {
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    opacity: 100%;
+    height: 100%;
+    left: -100%;
+    margin-top: 4rem;
+    position: fixed;
+    background: linear-gradient(to bottom, #0c0c0c, #eb7617);
   }
 }
 
@@ -106,28 +105,36 @@ header {
   justify-content: unset;
   padding: 0rem 2rem 0rem 2rem;
   width: 15rem;
+  opacity: 100%;
 }
-@media only screen and (max-width: 400px) {
-  .miMenuItem {
-    justify-content: center;
+
+/*Logo solo visible para responsive*/
+.logoMenu {
+  display: none;
+  width: 100%;
+  top: 0;
+}
+@media only screen and (max-width: 960px) {
+  .logoMenu {
+    display: flex;
   }
 }
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .miMenuItem {
-    justify-content: center;
-  }
+
+.miLogoMenu {
+  width: 3rem;
+  height: unset;
+  right: 0;
 }
 
 /*Define estilo de menu principal*/
 .miEncabezado {
-  color: black;
-  font-family: "Cinzel", serif;
+  color: white;
+  font-family: "Raleway", sans-serif;
   display: flex;
   align-items: unset;
   justify-content: unset;
-  text-shadow: 0.15rem 0.15rem white;
-  font-size: 2rem;
-  font-weight: bold;
+  text-shadow: 0.05rem 0.05rem #f11717;
+  font-size: 1rem;
   text-decoration: none;
   text-align: center;
   transition: transform 0.5s;
@@ -136,7 +143,7 @@ header {
   transform: scale(1.2);
   opacity: 100%;
   text-shadow: 0.15rem 0.15rem gray;
-  color: black;
+  color: white;
 }
 .miEncabezado:active {
   color: white;
@@ -157,6 +164,7 @@ footer {
   /* background-image: url('img/head.jpg');
   background-repeat:space;
   background-size:cover; */
+  display: contents;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -202,55 +210,16 @@ footer .miIconoRS:hover {
 
 /*Se configura logo de header*/
 .miLogo {
-  width: 3rem;
-  height: 3rem;
+  width: 7rem;
+  height: unset;
   box-sizing: content-box;
   /*Se incluye para corregir defecto generado por Carusel*/
 }
-@media only screen and (max-width: 400px) {
-  .miLogo {
-    width: 1rem;
-    height: 1rem;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .miLogo {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-}
-
-/*Se configura logo de header al hacer click(efecto)*/
-.miLogoClick {
-  width: 3rem;
-  height: 3rem;
-  display: none;
-}
-@media only screen and (max-width: 400px) {
-  .miLogoClick {
-    width: 0.5rem;
-    height: 0.5rem;
-    padding: 0.5rem;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .miLogoClick {
-    width: 1rem;
-    height: 1rem;
-    padding: 0.5rem;
-  }
-}
 
 .modelLogo {
-  display: flex;
-  align-items: center;
-  justify-content: unset;
-}
-.modelLogo:hover .miLogo {
-  display: none;
-}
-.modelLogo:hover .miLogoClick {
-  display: block;
+  margin: 1rem;
+  position: absolute;
+  right: 2rem;
 }
 
 /*Se configura logo de footer*/
@@ -281,23 +250,23 @@ footer .miIconoRS:hover {
   }
 }
 
-div div:hover ul {
+div div div:hover ul {
   display: inline-block;
   font-family: "Josefin Sans", "sans-serif";
-  text-shadow: 0.15rem 0.15rem white;
-  color: black;
+  text-shadow: 0.05rem 0.05rem #f11717;
+  color: white;
   background-color: #464545;
-  margin-top: 50px;
-  margin-left: 0;
+  margin-left: 6rem;
   width: 8rem;
+  padding: 0;
 }
-div div ul {
+div div div ul {
   list-style: none;
   font-size: 0;
   position: absolute;
   display: none;
 }
-div div ul li {
+div div div ul li {
   display: block;
 }
 
@@ -306,6 +275,7 @@ div div ul li {
   display: flex;
   align-items: center;
   justify-content: unset;
+  position: relative;
 }
 @media only screen and (max-width: 400px) {
   .portadaContainer {
@@ -332,17 +302,9 @@ div div ul li {
   justify-content: unset;
   width: 450px;
 }
-@media only screen and (max-width: 400px) {
-  .portadaItem {
-    width: 100%;
-    position: absolute;
-    display: flex;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
+@media only screen and (max-width: 960px) {
   .portadaItem {
     margin-top: 15rem;
-    width: 100%;
     position: absolute;
     display: flex;
   }
@@ -350,6 +312,18 @@ div div ul li {
 
 .imgPortada {
   width: 100%;
+}
+
+.logoPortada {
+  width: 25%;
+  margin: 4rem;
+  right: 0;
+  position: absolute;
+}
+@media only screen and (max-width: 960px) {
+  .logoPortada {
+    padding-top: 2rem;
+  }
 }
 
 .imgPortadatxt {
@@ -371,9 +345,9 @@ div div ul li {
 }
 
 .parrafoPortada {
-  color: black;
+  color: white;
   font-family: "Josefin Sans", "sans-serif";
-  text-shadow: 0.15rem 0.15rem white;
+  text-shadow: 0.15rem 0.15rem #f11717;
 }
 .parrafoPortada::first-letter {
   font-size: 38px;
@@ -392,113 +366,57 @@ div div ul li {
   }
 }
 
-/*Se da formato a las galerias de  imagenes en gral*/
-.miGaleria {
-  width: 20rem;
-  padding-bottom: 12vh;
-  transition: width 0.8s, transform 0.5s;
-}
-
+/*Container del carrousel*/
 .galeriaPortadaContainer {
-  display: inline-block;
-  margin-left: 8rem;
-  margin-bottom: 10rem;
-  width: 1058px;
-}
-@media only screen and (max-width: 400px) {
-  .galeriaPortadaContainer {
-    width: 380px;
-    margin-left: 8px;
-    margin-bottom: 200px;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .galeriaPortadaContainer {
-    width: 600px;
-    margin-left: 8px;
-    margin-bottom: 200px;
-  }
+  display: flex;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
-/*Se da formato a las Galeroias individuales*/
+/*Se da formato a las Galerias individuales*/
 .galeriaContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-.galeriaContainer:active .fondoZoom {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10000%;
-  height: 1000%;
-  z-index: 999;
-}
-@media only screen and (max-width: 400px) {
-  .galeriaContainer {
-    margin-top: 200px;
-    margin-left: 8px;
-    margin-bottom: 200px;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .galeriaContainer {
-    margin-top: 200px;
-    margin-left: 8px;
-    margin-bottom: 200px;
-  }
-}
-
-.fondoZoom {
-  display: none;
+  display: grid;
+  grid-auto-flow: dense;
+  /*Llena todos los espacios en caso de tener elementos de diferente tamaño*/
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  /*Me genera cant de columnas acorde a tamaño de pantalla*/
+  grid-auto-rows: 10rem;
+  grid-gap: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .galeriaItem {
-  display: flex;
-  align-items: unset;
-  justify-content: unset;
+  position: relative;
+  /*Se genera efecto zoom al mantener click en la imagen*/
 }
 .galeriaItem p {
   display: none;
 }
-.galeriaItem:active img {
-  /*Se genera efecto zoom al mantener click en la imagen*/
+.galeriaItem:active {
+  width: 100%;
+  height: 100%;
   position: fixed;
-  top: 3rem;
-  left: 25rem;
-  width: 30rem;
-  /*PERDON, FUE LA UNICA MANERA DE METER UNA SUMA JAJA*/
+  top: 0;
+  left: 0;
+  padding-left: 25%;
+  z-index: 1000;
+  background: linear-gradient(rgba(158, 153, 153, 0.1), black);
+}
+.galeriaItem:active img {
+  width: 50%;
   z-index: 1000;
 }
-.galeriaItem:hover p {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  z-index: 800;
-  Position: absolute;
-  text-shadow: 0.1rem 0.1rem gray;
-  color: black;
-  font-family: "Josefin Sans", "sans-serif";
-  margin-top: 10rem;
-  margin-left: 6rem;
-  opacity: 90%;
-}
-.galeriaItem:hover img {
+.galeriaItem img:hover {
   transform: translate(1rem, -1rem);
+  cursor: pointer;
 }
-@media only screen and (max-width: 400px) {
-  .galeriaItem img {
-    width: 11.1111111111rem;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .galeriaItem img {
-    width: 13.3333333333rem;
-  }
+
+.miGaleria {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: width 0.8s, transform 0.5s;
 }
 
 .nosotrosContainer {
@@ -539,12 +457,12 @@ div div ul li {
 }
 
 .textNosotros {
-  color: black;
+  color: white;
   font-family: "Josefin Sans", "sans-serif";
-  text-shadow: 0.15rem 0.15rem white;
+  text-shadow: 0.15rem 0.15rem #f11717;
   font-size: 38px;
   font-family: "Caveat", cursive;
-  background-color: #5b7e92;
+  background-color: #794134;
   border-radius: 1rem;
   padding: 3rem 1rem 1rem 1rem;
 }
@@ -568,7 +486,7 @@ div div ul li {
 }
 
 .presentacionContainer {
-  box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem #5b7e92;
+  box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem #794134;
   margin-left: 3rem;
   margin-bottom: 10rem;
   width: 1220px;
@@ -611,11 +529,10 @@ div div ul li {
 }
 
 .textPresentacion {
-  /*Color de texto provisorio, ya que posiblemte cambie el fondo*/
-  color: black;
+  color: white;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 28.5px;
-  box-shadow: 5px 10px grey;
+  box-shadow: 5px 10px #794134;
 }
 @media only screen and (max-width: 400px) {
   .textPresentacion {
@@ -631,29 +548,24 @@ div div ul li {
 }
 
 .contactoContainer {
+  width: 100%;
   display: grid;
-  margin-bottom: 200px;
-  margin-left: 1rem;
-  grid-template-columns: 700px 600px;
+  grid-template-columns: 45% 45%;
+  grid-auto-rows: 50rem;
+  grid-gap: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 960px) {
   .contactoContainer {
-    margin-left: 1rem;
-    margin-bottom: 200px;
-    grid-template-columns: 370px;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .contactoContainer {
-    margin-left: 1rem;
-    margin-bottom: 200px;
-    grid-template-columns: 440px;
+    grid-template-columns: 80%;
+    grid-auto-rows: 45rem;
   }
 }
 
 .contactoItem {
   margin-top: 1.5rem;
-  background-color: #6f95aa;
+  background-color: #794134;
   border-radius: 1rem;
 }
 @media only screen and (max-width: 400px) {
@@ -669,40 +581,20 @@ div div ul li {
 }
 
 .imgContacto {
-  height: 950px;
-  width: 640px;
-  margin-top: 2rem;
+  width: 100%;
+  object-fit: cover;
   box-shadow: 10px 10px gray;
-}
-@media only screen and (max-width: 400px) {
-  .imgContacto {
-    width: 300px;
-    height: 324px;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .imgContacto {
-    width: 390px;
-    height: 422px;
-  }
 }
 
 .contactoParrafo {
   padding: 2rem;
-  color: black;
+  color: white;
   font-family: "Viaoda Libre", cursive;
   font-size: 2rem;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 960px) {
   .contactoParrafo {
-    padding: 0;
-    font-size: 17.1px;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .contactoParrafo {
-    padding: 0;
-    font-size: 19px;
+    font-size: 1.5rem;
   }
 }
 
@@ -713,21 +605,7 @@ div div ul li {
   flex-direction: column;
   padding: 1rem;
   padding-top: 2rem;
-}
-@media only screen and (max-width: 400px) {
-  .formularioContainer {
-    margin-left: 0;
-    margin-top: 1rem;
-    margin-bottom: 50px;
-    padding-top: 0;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .formularioContainer {
-    margin-left: 0;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
+  width: 100%;
 }
 
 .formularioItem {
@@ -809,14 +687,14 @@ div div ul li {
 
 /*Se da estilo al cuerpo de los titulos*/
 .miTitulo {
-  color: black;
+  color: white;
   font-family: "Josefin Sans", "sans-serif";
   font-style: italic;
   font-style: bold;
   font-size: 2rem;
   text-decoration: underline;
   text-decoration-line: underline overline;
-  text-decoration-color: black;
+  text-decoration-color: #f11717;
   padding: 1rem;
   margin: 3rem 1rem 1rem 1rem;
 }
