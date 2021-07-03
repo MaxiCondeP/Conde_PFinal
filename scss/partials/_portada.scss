@@ -13,12 +13,9 @@
     background-size: cover;
     border-radius: .25rem;
     margin: auto;
-    // @media only screen and (max-width: 960px) {
-    //     margin-top:15rem;
-    //     position:absolute;
-    //     display:flex;
-    //   }
-
+    @media only screen and (max-width: 960px) {
+        padding:1rem;
+    }
 }
 
 

@@ -287,6 +287,11 @@ div div div ul li {
   border-radius: 0.25rem;
   margin: auto;
 }
+@media only screen and (max-width: 960px) {
+  .portadaItem {
+    padding: 1rem;
+  }
+}
 
 .imgPortada {
   width: 100%;
