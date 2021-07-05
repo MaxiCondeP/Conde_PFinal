@@ -26,6 +26,9 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
+        
+    <!--JS para animaciones-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
     <title>-CONTACTO-Fotografía Analógica MDP- *Dejanos tu consulta*</title>
@@ -35,7 +38,7 @@
     <!--ENCABEZADO-->
 
     <header>
-        <div class="miMenuContainer">
+        <div class="miMenuContainer"data-aos="fade-right" data-aos-delay="200"data-aos-duration="1000">
             <div class="logoMenu">
                 <img src="Images/icon/menu.svg" alt="Boton de menú" class="miLogoMenu">
             </div>
@@ -56,49 +59,49 @@
 
         </div>
         <div class="modelLogo">
-            <img src="Images/icon/LOGOcort.png" alt="Logotipo" class="miLogo">
+            <img src="Images/icon/LOGOcort.png" alt="Logotipo" class="miLogo" data-aos="fade-left" data-aos-delay="700" data-aos-duration="500">
         </div>
 
 
     </header>
-    <h1 class="miTitulo">
+    <h1 class="miTitulo" data-aos="fade-in" data-aos-delay="600" data-aos-duration="500">
         Contacto
     </h1>
 
     <div class="contactoContainer">
-        <div class="imgContacto">
+        <div class="imgContacto"data-aos="fade-right" data-aos-delay="700" data-aos-duration="500">
         <div>
             <img src="Images/fotoContacto.jpg" alt="Imagen Contacto">
         </div>
           </div>  
-        <div class="contactoItem">
+        <div class="contactoItem" data-aos="fade-left" data-aos-delay="700" data-aos-duration="500">
             <form class="formularioContainer" action="">
                 <!--Formularo de contacto-->
-                <p class="contactoParrafo">
+                <p class="contactoParrafo" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="500">
                     Dejanos tus datos y consulta o sugerencia a través del siguiente formuario.
                     O escribirnos a mdp-analógica@gmail.com, y nos contactamos con vos.
 
                 </p>
-                <div class="formularioItem">
+                <div class="formularioItem" data-aos="flip-up" data-aos-delay="700" data-aos-duration="500">
                     <label for="nombreApellido">Nombre y Apellido:</label>
                 </div>
-                <div class="formularioItem">
+                <div class="formularioItem" data-aos="flip-up" data-aos-delay="700" data-aos-duration="500">
                     <input type="text" />
                 </div>
-                <div class="formularioItem">
+                <div class="formularioItem" data-aos="flip-down" data-aos-delay="700" data-aos-duration="500">
                     <label for="email">Email:</label>
                 </div>
-                <div class="formularioItem">
+                <div class="formularioItem" data-aos="flip-down" data-aos-delay="700" data-aos-duration="500">
                     <input type="email" />
                 </div>
 
-                <div class="formularioItem">
+                <div class="formularioItem" data-aos="flip-up" data-aos-delay="700" data-aos-duration="500">
                     <label for="consulta">Consulta:</label>
                 </div>
-                <div class="formularioItem">
+                <div class="formularioItem" data-aos="flip-up" data-aos-delay="700" data-aos-duration="500">
                     <textarea for="Consulta"></textarea>
                 </div>
-                <div class="formularioItem">
+                <div class="formularioItem" data-aos="flip-left" data-aos-delay="700" data-aos-duration="500">
                     <input type="submit" value="Enviar">
                     <input type="reset" value="Limpiar">
                 </div>
@@ -140,6 +143,10 @@
     <!--JS para menu responsive-->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="js/menu.js"></script>
+
+    <!--JS para animaciones-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/aos.js"></script>
 </body>
 
 </html>

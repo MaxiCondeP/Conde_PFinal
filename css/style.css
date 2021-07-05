@@ -60,6 +60,7 @@ header {
   position: absolute;
   top: 0;
   justify-content: left;
+  z-index: 1000;
 }
 @media only screen and (max-width: 960px) {
   .miMenuContainer {
@@ -79,6 +80,7 @@ header {
   background: linear-gradient(rgba(39, 36, 36, 0.5), rgba(145, 99, 47, 0.5));
   width: 100%;
   opacity: 75%;
+  z-index: 1000;
 }
 @media only screen and (max-width: 960px) {
   .miMenu {

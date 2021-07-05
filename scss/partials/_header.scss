@@ -20,8 +20,8 @@ header{
     height: 2rem;
     position:absolute;
     top:0;
-    justify-content: left;
-   
+    justify-content: left; 
+    z-index: 1000;  
     @media only screen and (max-width: 960px) {
       @include flexbox(flex, center, space-around);
       width: 55%;
@@ -40,6 +40,7 @@ header{
     background: $bgd-image-header;
     width:100%;
     opacity: 75%;
+    z-index: 1000;
       @media only screen and (max-width: 960px) {
         flex-direction: column;
         justify-content: flex-start;
