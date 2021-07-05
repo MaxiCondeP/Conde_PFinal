@@ -24,8 +24,7 @@
     @media only screen and (max-width: 960px) {
         padding:1rem 1rem 1rem 7rem;
         opacity: 80%;
-        background-size:contain;
-       
+        background-size:contain;       
     }
 
     p{
@@ -64,7 +63,11 @@
 
     @media only screen and (max-width: 960px)  {
 
-        font-size: 1.5rem;
+        font-size: 1rem;
+        &::first-letter{
+            font-size: $txt-size*1.5;
+            font-style: italic;
+        }
     }
   
 
