@@ -14,15 +14,18 @@
 .portadaItem{
     display: block;
     width: 98%;/*para equiparar tamañoo con carrousel*/
-    padding:5rem;
     text-shadow:$txt-shadow;
-    background-image: url('../Images/fondo.jpg');
+    background-image: url('../Images/fondonuevo.jpg');
     background-size: cover;
+    background-repeat:repeat-y;
     border-radius: .25rem;
     margin: auto;
-    @media only screen and (max-width: 960px) {
-        padding:1rem;
-    }
+    padding:2rem;
+    opacity: 80%;
+
+    // @media only screen and (max-width: 960px) {
+    //     padding:1rem;
+    // }
 }
 
 
@@ -35,6 +38,7 @@
     margin:4rem;
     right:0;
     position: absolute;
+    z-index: 1000;
     @media only screen and (max-width: 960px) {
         padding-top:2rem;
       }
@@ -43,6 +47,10 @@
 
 .parrafoPortada{
     @include text($txt-color, $font-family);
+    text-align: center;
+    background-image:  linear-gradient(to bottom, gray, black);
+    
+    opacity:80%;
     &::first-letter{
         font-size: $txt-size*2;
         font-style: italic;

@@ -9,7 +9,7 @@ function main(){
         if(contador == 1){
 			$('.miMenu').animate({
 				left: '0'
-			});
+			});		
 			contador = 0;
 		} else {
 			contador = 1;

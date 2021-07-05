@@ -7,7 +7,6 @@ html{
     @include text($txt-color, $font-family);
     font-size: $txt-size;
     min-height: 100%;
-    position: relative;
 
     @media only screen and (max-width: 400px) {
         font-size: 10px;
@@ -19,8 +18,9 @@ html{
 }
 /*Reseteo posicionamiento de elementos*/
 * {
-    Margin:0;
+    margin:0;
     padding:0;
+    // position:relative;
  }
 
   /*Se da estilo al cuerpo de la página*/
@@ -28,6 +28,7 @@ html{
     background-size: cover;
     background-repeat: repeat;
     background-image:$bgd-image;
+    line-height: 1.5;
 }
 
 /*Saca el subrayado en links*/

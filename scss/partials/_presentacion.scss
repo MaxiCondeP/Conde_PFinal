@@ -3,129 +3,93 @@
 
 .nosotrosContainer{
   display: grid;
-  margin-left: 3rem;
-  margin-bottom: 1rem;
-  grid-template-columns: 740px 500px;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 3rem;
+  grid-template-columns: 50% 50%;
 
-  @media only screen and (max-width: 400px) {
-    margin-left: 0;
-    margin-bottom: 1rem;
-    grid-template-columns: 80%;
+  @media only screen and (max-width: 960px) {
+    width: 80%;
+    grid-template-columns: 95%;
+    margin:15%;
   }
-
-  @media only screen and (min-width: 400px)and (max-width: 960px) {
-    margin-left: 0;
-    margin-bottom: 1rem;
-    grid-template-columns: 80%;
-  }
-  
 
 }
 
 .imgNosotros{
-box-shadow: 10px 10px gray;
-@media only screen and (max-width: 400px) {
-  width:300px;
-  height: 324px;
-}
+  box-shadow: .5rem .5rem gray;
+  width:90%;
+  height:100% ;
+  img{
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+  }
 
-@media only screen and (min-width: 400px)and (max-width: 960px) {
-  width:390px;
- height: 422px;
-}  
 }
 
 
 
 .textNosotros{
   @include text($txt-color, $font-family);
+    width: 90%;
+    height: 100%;
+    margin:auto;
     text-shadow:$txt-shadow;
-    font-size: $txt-size*2;
-    font-family: $font-family-nosotros;
+    font-size: $txt-size*1.5;
     background-color: rgb(121, 65, 52);
     border-radius: 1rem;
-   
-    padding: 3rem 1rem 1rem 1rem ;
+    p{
+      height: 100%;
+      padding:3rem;
+    }
+
     &::first-letter{
         font-size: $txt-size*3;
         font-style: italic;
     }
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 960px) {
       margin-top: 1rem;
-      width: 100%;
+      width: 80%;
+      margin:2rem;
       text-shadow:none;
-      font-size: $txt-size*0.9; 
-          
+      font-size: $txt-size;
+
     }
 
-    @media only screen and (min-width: 400px)and (max-width: 960px) {
-      text-shadow:none;
-      font-size: $txt-size;  
-     
-    }
 }
 
 
 .presentacionContainer{
   box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem  rgb(121, 65, 52);
-  margin-left: 3rem;
-  margin-bottom: 10rem;
-  width: 1220px;
+  margin: 2rem;
+  width: 90%;
   border-radius: 1rem;
   display: grid;
-  grid-template-columns: 360px 740px 140px;
-  @media only screen and (max-width: 400px) {
-    width: 100%;
-      margin-left: 0;
-      grid-template-columns: 300px;
-    }
-
-    @media only screen and (min-width: 400px)and (max-width: 960px) {
-      width: 100%;
-      grid-template-columns: 420px;
-      margin-left:0;
-    }
-
+  grid-template-columns: 30% 60% 10%;
 }
 
 .presentacionItem{
-  margin:1rem;
+  width: 100%;
+  margin:auto;
 }
 .imgPresentacion{
-  
-  @media only screen and (max-width: 400px) {
-       width: 100px ;
-       height: 100px;
-       padding: 0;
-      
-     }
-
-     @media only screen and (min-width: 400px)and (max-width: 960px) {
-       width: 200px;
-       height: 200px;
-       padding: 0;
-      
-     }
+  width: 80%;
+  margin:auto;
+  object-fit: cover;
 }
 
 .textPresentacion{
   @include text($txt-color, $font-family-presenta);
   font-size: $txt-size*1.5;
   box-shadow: 5px 10px rgb(121, 65, 52);
+  padding:1rem;
 
-  @media only screen and (max-width: 400px) {
-    font-size: $txt-size/1.5;
-
-    padding:1rem;
-   
+  @media only screen and (max-width: 960px)  {
+    font-size: $txt-size;
   }
 
-  @media only screen and (min-width: 400px)and (max-width: 960px) {
-      font-size: $txt-size;
-  
-      padding:1rem;
-      
-  }
+
 
 }

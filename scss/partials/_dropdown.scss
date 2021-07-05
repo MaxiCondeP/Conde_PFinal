@@ -3,13 +3,19 @@ div{
       div{
          &:hover ul {
             display:inline-block;
+            position: absolute;
             font-family: $font-family;
             text-shadow: $txt-shadow-header;
             color: $txt-color-header;
             background-color: rgb(70, 69, 69);
-            margin-left:6rem;
+            top:1.5rem;
             width:8rem;
             padding:0; 
+            @media only screen and (max-width: 960px) {
+               left: 8rem;
+               top:auto;
+            } 
+            
          }
    
        ul{
@@ -17,9 +23,11 @@ div{
           font-size:0;
           position: absolute;
           display: none;
+          
    
           li {
-              display: block;
+              display: block;   
+              text-align: right;           
            }
          }
       }
