@@ -134,9 +134,9 @@ header {
 .cierreMenu {
   display: none;
   width: 100%;
-  font-size: 2.5rem;
+  font-size: 1rem;
+  padding: 1rem;
   color: white;
-  font-style: bold;
   text-align: right;
   position: absolute;
   top: -0.2rem;
@@ -325,6 +325,13 @@ div div div ul li {
   padding: 1rem 1rem 1rem 10rem;
   opacity: 90%;
 }
+@media only screen and (max-width: 960px) {
+  .portadaItem {
+    padding: 1rem 1rem 1rem 7rem;
+    opacity: 80%;
+    background-size: contain;
+  }
+}
 .portadaItem p {
   width: 100%;
   margin: 0;
@@ -358,14 +365,9 @@ div div div ul li {
   font-size: 38px;
   font-style: italic;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 960px) {
   .parrafoPortada {
-    font-size: 1rem;
-  }
-}
-@media only screen and (min-width: 400px) and (max-width: 960px) {
-  .parrafoPortada {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -474,8 +476,9 @@ div div div ul li {
     margin-top: 1rem;
     width: 80%;
     margin: 2rem;
+    padding: 1rem;
     text-shadow: none;
-    font-size: 19px;
+    font-size: 1rem;
   }
 }
 

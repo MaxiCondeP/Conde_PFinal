@@ -21,6 +21,13 @@
     margin: auto;
     padding: 1rem 1rem 1rem 10rem;
     opacity: 90%;
+    @media only screen and (max-width: 960px) {
+        padding:1rem 1rem 1rem 7rem;
+        opacity: 80%;
+        background-size:contain;
+       
+    }
+
     p{
         width: 100%;
         margin: 0;
@@ -55,14 +62,11 @@
         font-style: italic;
     }
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 960px)  {
 
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
-    @media only screen and (min-width: 400px)and (max-width: 960px) {
-
-        font-size:1rem;
-    }
+  
 
 
 }
