@@ -1,0 +1,31 @@
+.errorContainer{
+    @include flexbox(flex, center,center);
+    flex-direction: column;
+    width: 50%;
+    margin:auto;
+    img{
+        width: 60%;
+        box-shadow: 1rem 1rem gray; 
+        margin:1rem;   
+    }
+    p{
+        padding-bottom:1rem;
+    }
+
+}
+
+.errorTitulo{
+    @include text($txt-color, $font-family);
+    font-style: italic;
+    font-style:bold;
+    font-size: 4rem;
+    text-decoration: underline;
+    text-decoration-line: underline overline;
+    text-decoration-color: rgb(241, 23, 23);
+    margin-top:1rem;
+}
+
+.errorTxt{
+    @include text($txt-color, $font-family);
+    font-size: 2rem;
+}

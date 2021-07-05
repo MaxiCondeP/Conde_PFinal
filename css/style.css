@@ -620,4 +620,39 @@ div div div ul li {
   margin: 3rem 1rem 1rem 1rem;
 }
 
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+.errorContainer img {
+  width: 60%;
+  box-shadow: 1rem 1rem gray;
+  margin: 1rem;
+}
+.errorContainer p {
+  padding-bottom: 1rem;
+}
+
+.errorTitulo {
+  color: white;
+  font-family: "Josefin Sans", "sans-serif";
+  font-style: italic;
+  font-style: bold;
+  font-size: 4rem;
+  text-decoration: underline;
+  text-decoration-line: underline overline;
+  text-decoration-color: #f11717;
+  margin-top: 1rem;
+}
+
+.errorTxt {
+  color: white;
+  font-family: "Josefin Sans", "sans-serif";
+  font-size: 2rem;
+}
+
 /*# sourceMappingURL=style.css.map */
