@@ -111,7 +111,7 @@ header{
     @include text($txt-color-header, $font-family-header);
     @include flexbox(flex, unset, unset);
     text-shadow:$txt-shadow-header;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-decoration: none;
     text-align: center;
     transition: transform 0.5s;

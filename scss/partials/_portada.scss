@@ -7,7 +7,6 @@
         padding: .5rem;
     }
         
-    
 
 }
 
@@ -20,12 +19,12 @@
     background-repeat:repeat-y;
     border-radius: .25rem;
     margin: auto;
-    padding:2rem;
-    opacity: 80%;
-
-    // @media only screen and (max-width: 960px) {
-    //     padding:1rem;
-    // }
+    padding: 1rem 1rem 1rem 10rem;
+    opacity: 90%;
+    p{
+        width: 100%;
+        margin: 0;
+    }
 }
 
 
