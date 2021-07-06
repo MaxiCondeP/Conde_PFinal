@@ -239,6 +239,12 @@ footer .miIconoRS:hover {
   box-sizing: content-box;
   /*Se incluye para corregir defecto generado por Carusel*/
 }
+@media only screen and (max-width: 960px) {
+  .miLogo {
+    width: 4rem;
+    height: unset;
+  }
+}
 
 .modelLogo {
   margin: 1rem;

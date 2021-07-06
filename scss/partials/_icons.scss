@@ -19,7 +19,9 @@
 .miLogo{
     @include logo(7rem, unset);
     box-sizing: content-box;/*Se incluye para corregir defecto generado por Carusel*/ 
-
+    @media only screen and (max-width: 960px) {
+      @include logo(4rem, unset);
+    }
 }
 
 
