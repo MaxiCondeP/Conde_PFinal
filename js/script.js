@@ -173,8 +173,9 @@ listaOrden.push(cargarItem());
 cargarCarrito(preguntaSeguir());
 //Se construye carrito
 const carrito1= new Carrito(nombre, listaOrden);
-console.table(listaOrden);//chequeo el contenido del array en cada carga
-
+/*chequeo el contenido del array en cada carga, 
+paso el listaOrden completo por que lo que muestra es una tabla con todo el contenido del arreglo*/
+console.table(listaOrden);
 carrito1.mostrarTotal();
 carrito1.despedir();
 
