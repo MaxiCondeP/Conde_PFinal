@@ -77,6 +77,58 @@ class Carrito{
     }
         
 
+    //se crea dom para div carrito, donde se va a cargar la tabla
+    crearTabla(){
+        let tabla= document.createElement("table");
+        tabla.setAttribute("class", "table table-dark table-sm");
+        let cuerpoTabla= document.createElement("tbody");
+        
+
+        //Se cargan titulos de la tabla
+        let titulosTabla=document.createElement("tr");
+        let celdaTitulo1=document.createElement("td");
+        celdaTitulo1.innerText= "CODIGO";
+        titulosTabla.appendChild(celdaTitulo1);
+        let celdaTitulo2=document.createElement("td");
+        celdaTitulo2.innerText= "CANTIDAD";
+        titulosTabla.appendChild(celdaTitulo2);
+        let celdaTitulo3=document.createElement("td");
+        celdaTitulo3.innerText= "PRECIO";
+        titulosTabla.appendChild(celdaTitulo3);
+        cuerpoTabla.appendChild(titulosTabla);
+        
+       
+       
+        
+    
+        for(const item of this.listaOrden){
+            let miFila=document.createElement("tr");
+            let miCeldaCodigo=document.createElement("td");
+            miCeldaCodigo.innerText= item.codigo;
+            miFila.appendChild(miCeldaCodigo);
+            let miCeldaCantidad=document.createElement("td");
+            miCeldaCantidad.innerText= item.cantidad;
+            miFila.appendChild(miCeldaCantidad);
+            let miCeldaPrecio=document.createElement("td");
+            miCeldaPrecio.innerText= item.total;
+            miFila.appendChild(miCeldaPrecio);
+            cuerpoTabla.appendChild(miFila);
+        }
+        tabla.appendChild(cuerpoTabla);
+
+         //Se total de la tabla
+         let totalTabla=document.createElement("tr");
+         let celdaTotal1=document.createElement("td");
+         celdaTotal1.innerText= "TOTAL: ";
+         totalTabla.appendChild(celdaTotal1);
+         let celdaTotal2=document.createElement("td");
+         celdaTotal2.innerText= this.total;
+         totalTabla.appendChild(celdaTotal2);
+         cuerpoTabla.appendChild(totalTabla);
+
+        return tabla;
+    }
+
 }
 
 class Item{
@@ -176,6 +228,8 @@ const carrito1= new Carrito(nombre, listaOrden);
 /*chequeo el contenido del array en cada carga, 
 paso el listaOrden completo por que lo que muestra es una tabla con todo el contenido del arreglo*/
 console.table(listaOrden);
+let carrito= document.getElementById("carrito");
+carrito.appendChild(carrito1.crearTabla());
 carrito1.mostrarTotal();
 carrito1.despedir();
 
