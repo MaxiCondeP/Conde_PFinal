@@ -116,7 +116,7 @@ class Carrito{
         }
         tabla.appendChild(cuerpoTabla);
 
-         //Se total de la tabla
+         //Se  agrega total de la tabla
          let totalTabla=document.createElement("tr");
          let celdaTotal1=document.createElement("td");
          celdaTotal1.innerText= "TOTAL: ";
@@ -124,7 +124,14 @@ class Carrito{
          let celdaTotal2=document.createElement("td");
          celdaTotal2.innerText= this.total;
          totalTabla.appendChild(celdaTotal2);
+         let botonLimpiar=document.createElement("Button");
+         botonLimpiar.innerText="Vaciar Carrito";
+         totalTabla.appendChild(botonLimpiar);
+         botonLimpiar.setAttribute("class", "btn btn-danger");
+         botonLimpiar.setAttribute("id", "btnLimpiar");
+         botonLimpiar.setAttribute("type", "submit");
          cuerpoTabla.appendChild(totalTabla);
+         
 
         return tabla;
     }
@@ -207,30 +214,50 @@ function cargarItem(){
 
  //Pregunta si desea seguir comprando  devuelve la respesta
  function preguntaSeguir(){
-    return (prompt("¿Seguir Comprando?  S/N ")).toUpperCase();
-}
-
-//Funcion para repeticion de carga, se pide como parámetro la respuesta del usuario, para contiunuar con el bucle
-function cargarCarrito(sigue){
-    while(sigue!="N"){
-        listaOrden.push(cargarItem());
-        sigue=preguntaSeguir();  //Pregunta si desea seguir
+    let sigue= (prompt("¿Seguir Comprando?  S/N ")).toUpperCase();
+    if (sigue!="N"){
+        return true;
+    }else{
+        return false
     }
 }
 
 
-let nombre=bienvenida();
-const listaOrden=[];// Se carga en cada carrito un array con los objetos item agregados a la orden
-listaOrden.push(cargarItem());
-cargarCarrito(preguntaSeguir());
-//Se construye carrito
-const carrito1= new Carrito(nombre, listaOrden);
-/*chequeo el contenido del array en cada carga, 
-paso el listaOrden completo por que lo que muestra es una tabla con todo el contenido del arreglo*/
-console.table(listaOrden);
-let carrito= document.getElementById("carrito");
-carrito.appendChild(carrito1.crearTabla());
-carrito1.mostrarTotal();
-carrito1.despedir();
+const iniciarCompra= () => {  //Se inicia la compra devolviendo el objeto carrito
+    let nombre=bienvenida();
+    const listaOrden=[];// Se carga en cada carrito un array con los objetos item agregados a la orden
+    let sigue= true;
+    while(sigue){
+        listaOrden.push(cargarItem());
+        sigue=preguntaSeguir();  //Pregunta si desea seguir
+    }
+    const carrito1= new Carrito(nombre, listaOrden);//Se construye carrito
+    console.table(listaOrden);//chequeo el contenido del array en cada carga
+    return carrito1;
+}
+
+const interactuarConHtml = (carrito1) => {  
+    let titulo=document.createElement("h2");
+    titulo.innerHTML = `<h2 class="text-light">Cliente: ${carrito1.nombre}</h2>`;
+    
+
+    //creo tabla en html con compra generada
+    const capturarCarrito = () => document.getElementById("carrito");
+    const carrito = capturarCarrito();
+    const tabla= carrito1.crearTabla();
+    carrito.appendChild(titulo);
+    carrito.appendChild(tabla);
+    carrito1.mostrarTotal();
+    carrito1.despedir(); 
+
+    //esto me genero dudas, ya que no se si necesito capturar un elemento creado a traves del dom
+    const capturarBoton=()=> document.getElementById("btnLimpiar");
+    const boton= capturarBoton();
+    boton.onclick = () => {
+        carrito.removeChild(tabla);///Elimino la tabla cargada en eldocument
+        interactuarConHtml(iniciarCompra());};   //Reinicio el proceso
+  }
 
 
+
+  interactuarConHtml(iniciarCompra());

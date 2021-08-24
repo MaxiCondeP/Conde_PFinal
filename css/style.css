@@ -188,8 +188,6 @@ footer {
   /* background-image: url('img/head.jpg');
   background-repeat:space;
   background-size:cover; */
-  display: contents;
-  position: absolute;
   bottom: 0;
   width: 100%;
   color: white;
