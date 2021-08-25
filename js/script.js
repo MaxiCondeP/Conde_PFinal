@@ -255,6 +255,7 @@ const interactuarConHtml = (carrito1) => {
     const boton= capturarBoton();
     boton.onclick = () => {
         carrito.removeChild(tabla);///Elimino la tabla cargada en eldocument
+        carrito.removeChild(titulo);
         interactuarConHtml(iniciarCompra());};   //Reinicio el proceso
   }
 
