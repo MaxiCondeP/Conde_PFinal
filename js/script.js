@@ -69,9 +69,9 @@ let productos = [
 
 
 class Item {
-    constructor(codigo) {
+    constructor(codigo, cantidad) {
         this.codigo = codigo;
-        this.cantidad = this.pedirCantidad();
+        this.cantidad = cantidad;
         this.tamano = this.elegirTamano();
         this.precio = this.calcularUnidad();
         this.total = this.calcularTotal();
@@ -79,17 +79,17 @@ class Item {
 
 
     //pide cantidad requerida, valido que sea mayor a cero y numérico
-    pedirCantidad() {
-        let cantidad =0; 
-        do{
-            cantidad= prompt("Ingrese cantidad requerida");
-            if ((isNaN(cantidad))|| (cantidad==0)){
-                cantidad=prompt("Ingrese cantidad requerida en nros(Mayor a cero)")
-            }
+    // pedirCantidad() {
+    //     let cantidad =0; 
+    //     do{
+    //         cantidad= prompt("Ingrese cantidad requerida");
+    //         if ((isNaN(cantidad))|| (cantidad==0)){
+    //             cantidad=prompt("Ingrese cantidad requerida en nros(Mayor a cero)")
+    //         }
                 
-        }while (cantidad==0);
-    return parseInt(cantidad);
-    }
+    //     }while (cantidad==0);
+    // return parseInt(cantidad);
+    // }
 
     //pide el tamaño, que define el precio
     //va a ser reemplazado por un selector en el html
@@ -139,8 +139,8 @@ class Item {
 
 
 //funcion que contiene pide datos y contruye objeto Item
-function cargarItem(codigo) {
-    const item1 = new Item(codigo);
+function cargarItem(codigo, cantidad) {
+    const item1 = new Item(codigo, cantidad);
     item1.confirmar();
     return item1;
 }
@@ -234,7 +234,7 @@ const cargarTienda = (productos) => {
     const crearCard = () => {
         let card = document.createElement("div");
         card.setAttribute("class", "card");
-        card.setAttribute("style", "width: 15rem");
+        card.setAttribute("style", "width: 16rem");
         return card;
     }
 
@@ -245,11 +245,12 @@ const cargarTienda = (productos) => {
         return img;
     }
 
-    const agregarItems = (boton,codigo) => {
+    const agregarItems = (boton,codigo, cantidad) => {
         //agrego el evento click
         boton.addEventListener("click", () => {//agrego el evento click 
             let listaOrden=[];
-            let item = cargarItem(codigo);
+            let cant= cantidad.value;
+            let item = cargarItem(codigo, cant);
             listaOrden.push(item);
             if (localStorage.getItem("carrito") === null) {
                 localStorage.setItem("carrito",JSON.stringify(listaOrden));
@@ -267,11 +268,17 @@ const cargarTienda = (productos) => {
         cuerpo.setAttribute("class", "card-body");
         let titulo = document.createElement("h5");
         titulo.innerHTML = `${codigo}`;
+        let cantidad= document.createElement("input");
+        cantidad.setAttribute("type", "number");
+        cantidad.setAttribute("max", "99");
+        cantidad.setAttribute("min", "1");
+        cantidad.setAttribute("value", "1");
         let boton = document.createElement("button");
-        boton.setAttribute("class", "btn btn-primary btnAgregar");
-        boton.innerHTML = `Agregar al carrito`;
-        agregarItems(boton, codigo);
+        boton.setAttribute("class", "btn btn-outline-secondary btn-sm");
+        boton.innerHTML = `Comprar`;
+        agregarItems(boton, codigo, cantidad);
         cuerpo.appendChild(titulo);
+        cuerpo.appendChild(cantidad);
         cuerpo.appendChild(boton);
         return cuerpo;
     }
