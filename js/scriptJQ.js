@@ -222,11 +222,22 @@ function cargarItem(codigo, cantidad, tamano) {
     <td><button id="btnLimpiar" class="btn btn-danger btn-sm"> Vaciar Carrito </button>  </td>
     </tfoot>  
     `);
-     // Genero evento para btn limpiar
-    $("#btnLimpiar").on("click", function () {//limpio storage y recargo la pagina
-        localStorage.clear();
-        location.reload(); 
+     // Genero evento con animación para btn limpiar
+    $("#btnLimpiar").on("click",function(){
+        $("#carritoContainer").animate(
+            {opacity:"-=50%"}, 600,function(){
+                $("#carritoContainer").animate(
+                    {opacity:"+=50%"},600,function(){
+                $("#carritoContainer").fadeOut(800);
+                localStorage.clear()})/// luego de la animacion limpio el storage
+            })
     });
+
+
+    
+    
+    //limpio storage y recargo la pagina
+        
    
     //pongo visible el div descuento y resumen
     $("#descuento").show();
@@ -292,6 +303,7 @@ function cargarItem(codigo, cantidad, tamano) {
     $("#botonDto").on("click", function(){
         let cupon= ($("#inputDto").val()).toUpperCase(); //cupon ingresado por usr
         let descuento= aplicarCupon(cupon);// porc de descuento otorgado por cupon
+        let listaOrden=traerListaStorage();//traigo la orden de storage
         if(descuento=="0"){
             $("#pDto").html("Cupón inválido");
             $("#pDto").attr("style","color:red");

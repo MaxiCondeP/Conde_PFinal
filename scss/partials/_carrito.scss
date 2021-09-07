@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding: 0 6rem 0 6rem;
   
   p{
     display:block;
@@ -13,7 +14,7 @@
 
 .tiendaContainer{
   width: 100%;
-  padding: 1rem;
+  padding: 3rem;
   display:grid;
   grid-auto-flow: dense;/*Llena todos los espacios en caso de tener elementos de diferente tamaño*/
   grid-template-columns: repeat(auto-fill , minmax(20rem, 1fr));    
