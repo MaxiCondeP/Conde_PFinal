@@ -1,0 +1,40 @@
+.carritoContainer{
+  box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem  rgb(121, 65, 52);
+  border-radius: 1rem;
+  margin: 0 5rem  1rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  
+  p{
+    display:block;
+  }
+}
+
+.tiendaContainer{
+  width: 100%;
+  padding: 1rem;
+  display:grid;
+  grid-auto-flow: dense;/*Llena todos los espacios en caso de tener elementos de diferente tamaño*/
+  grid-template-columns: repeat(auto-fill , minmax(20rem, 1fr));    
+  grid-auto-rows:25rem;
+  grid-gap:1.5rem;
+
+
+  p{
+      margin:0;
+  }
+}
+
+.imgCarrito{
+  width: 100%;
+  object-fit:fill;
+}
+
+.invisible{
+    display: none;
+}
+
+.visible{
+  display: flex;
+}

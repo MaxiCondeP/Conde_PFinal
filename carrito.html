@@ -60,6 +60,7 @@
                     </ul>
                 </div>
                 <div class="miMenuItem"><a href="nosotros.html" class="miEncabezado">NOSOTROS</a></div>
+                <div class="miMenuItem"><a href="carrito.html" class="miEncabezado">TIENDA</a></div>
                 <div class="miMenuItem"><a href="contacto.html" class="miEncabezado">CONTACTO</a></div>
             </div>
 
@@ -74,13 +75,18 @@
         Tienda
     </h1>
 
-    <div id="tiendaContainer" class="galeriaContainer">
-        
+    <div id="tiendaContainer" class="tiendaContainer"> </div>
+
+    <div id="carritoContainer" class="carritoContainer"></div>
+    <!-- container px-5 w-100 h-100 -->
+    <a id="pPreguntaDesc" style="cursor:pointer">¿Tenés cupón de descuento?</a>
+    <div id="descuentoContainer" class="carritoContainer" >
+        <p id="pDto">EJ: DTO10CART</p>
+        <input id="inputDto"></input>
+        <button id="botonDto" class="btn btn-success btn-sm">Aplicar</button>   
     </div>
-
-
-    <div id="carrito" class="container px-5 w-100 h-100">
-
+    <div id="resumenCompra" class="nosotrosContainer">
+  
     </div>
 
 
@@ -106,9 +112,12 @@
         <!-- Texto derechos(?)-->
         <p>©Maximiliano Conde Paccelli (2021)</p>
     </footer>
-   
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
     <!--JS para menu responsive-->
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="js/menu.js"></script>
 
     <!--JS para animaciones-->
@@ -118,7 +127,9 @@
     <!-- CDN BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     
-    <!--JS para CARRITO/ se carga de manera provisoria, hasta generar tienda.html-->
-    <script src="js/script.js"></script>
+    <!--Sweet alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="js/scriptJQ.js"></script>
 
 </html>

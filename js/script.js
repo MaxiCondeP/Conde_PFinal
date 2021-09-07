@@ -266,8 +266,9 @@ const cargarTienda = (productos) => {
     const crearCuerpoCard = (codigo) => {
         let cuerpo = document.createElement("div");
         cuerpo.setAttribute("class", "card-body");
-        let titulo = document.createElement("h5");
-        titulo.innerHTML = `${codigo}`;
+        let titulo = document.createElement("p");
+        titulo.innerHTML = `Código: ${codigo}`;
+     
         let cantidad= document.createElement("input");
         cantidad.setAttribute("type", "number");
         cantidad.setAttribute("max", "99");
