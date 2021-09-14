@@ -2,30 +2,32 @@
 */
 
 //se inicializan totales
-let contadorCarrito = 0;
-let totalCarrito = 0;
+let descuentoCarrito = 0;
+let productos=[];
+let cupones=[];
 
-///////////////////////////////////////////////////////////ARRAYS//////////////////////////////////////////////////////
 
-////imagenes a la venta
-let productos = [
-    { codigo: "0001", descripcion: "", autor: "", img: "https://i.ibb.co/DQMWsKP/Maxi-1.jpg" },
-    { codigo: "0002", descripcion: "", autor: "", img: "https://i.ibb.co/zQrZBN8/Maxi-2.jpg" },
-    { codigo: "0003", descripcion: "", autor: "", img: "https://i.ibb.co/jh5RKhM/Maxi-3.jpg" },
-    { codigo: "0004", descripcion: "", autor: "", img: "https://i.ibb.co/0B65yZ8/Maxi-6.jpg" },
-    { codigo: "0005", descripcion: "", autor: "", img: "https://i.ibb.co/c13S70X/Maxi-5.jpg" },
-    { codigo: "0006", descripcion: "", autor: "", img: "https://i.ibb.co/0B65yZ8/Maxi-6.jpg" }
-]
-
-///cupones de descuento
-let cupones=[
-    { codigo: "DTO10CART", porcentaje:"10"},
-    { codigo: "DTO15CART", porcentaje:"15"},
-    { codigo: "DTO25CART", porcentaje:"25"},
-    { codigo: "DTO50CART", porcentaje:"50"},
-]
 ///////////////////////////////////////////////////////////FUNCIONES CARRITO//////////////////////////////////////////////////////
 
+    const traerProductos=()=>{ ///traigo productos de json y los renderizo
+        const URLJSON="json/prints.json";
+        $.getJSON(URLJSON, function(respuesta, estado) {
+            if(estado=="success"){
+                productos= respuesta.productos;
+                mostrarItems(productos);      
+            }
+        });
+    }
+
+    const traerCupones=()=>{ ///traigo cupones de json
+        const URLJSON="json/cupones.json";
+        $.getJSON(URLJSON, function(respuesta, estado) {
+            if(estado=="success"){
+                console.log(respuesta);
+                cupones= respuesta.cupones;
+            }
+        });
+    }
 
 
     //recorro el storage, y traigo la lista
@@ -80,14 +82,15 @@ let cupones=[
         return porcentaje;
     }
 
-    //se calcula el monto a descontar acorde al porcentaje de  descuento
-    const calcularDescuento=(monto, descuento)=> {
-        let descuentoTotal = ((monto * descuento) / 100);
+    //se calcula el monto a descontar acorde al porcentaje de  descuento guardado en la variable global
+    const calcularDescuento=(monto)=> {
+        let descuentoTotal = ((monto * descuentoCarrito) / 100);
         return descuentoTotal;
     }
 
     ///se calcula el monto total , haciendo el descuento correspondiente.
-    const calcularTotal=(monto, descuentoTotal)=> {
+    const calcularTotalConDescuento=(monto)=> {
+        let descuentoTotal =calcularDescuento(monto);
         let total = monto - descuentoTotal;
         return total;
     }
@@ -119,7 +122,7 @@ class Item {
             case "13x18":
                 precio = 200;
                 break;
-            case "15x21 ":
+            case "15x21":
                 precio = 250;
                 break;
         }
@@ -154,7 +157,9 @@ function cargarItem(codigo, cantidad, tamano) {
 ///////////////////////////////////////////////////////////DOM E INTERACCION CON HTML//////////////////////////////////////////////////////
     //creo tabla en html con compra generada   
   const cargarTabla=(nombre)=> {
-    let listaOrden=traerListaStorage();       
+    
+    let listaOrden=traerListaStorage(); //traigo tabla de storage
+    let total= calcularTotalConDescuento(calcularMonto(listaOrden)); ///calculo total final(con descuentos)     
     //Se cargan titulos de la tabla, asegurandome que este vacio el div, para que no me duplique la tabla
     $("#carritoContainer").empty().append(`
         <p>Cliente: ${nombre}</p>
@@ -178,8 +183,8 @@ function cargarItem(codigo, cantidad, tamano) {
         <td>${listaOrden[i].tamano}</td>
         <td><input  id="inputCantTabla${i}" width="2rem" type="number" max="99" min="0" value="${listaOrden[i].cantidad}"></input></td>
         <td>${listaOrden[i].total}</td>
-        <td><button id="btnActualizar${i}" class="btn btn-warning btn_sm">♻</button>
-        <button id="btnEliminar${i}"  class="btn btn-danger btn_sm"> x </button></td>
+        <td><button id="btnActualizar${i}" class="botonTabla">♻</button>
+        <button id="btnEliminar${i}"  class="botonTabla"> x </button></td>
         </tr>`);  
        $(`#inputCantTabla${i}`).on("change", function(){
             $(`#btnActualizar${i}`).show();//muestro Actualizar
@@ -216,9 +221,9 @@ function cargarItem(codigo, cantidad, tamano) {
  
     //Se  agrega total de la tabla
     $("#cuerpoTCarrito").append(`
-    <tfoot colspan="2">
+    <tfoot id="pieTabla">
     <td>TOTAL:  $</td>
-    <td>${calcularMonto(listaOrden)}</td>
+    <td>${total}</td>
     <td><button id="btnLimpiar" class="btn btn-danger btn-sm"> Vaciar Carrito </button>  </td>
     </tfoot>  
     `);
@@ -231,13 +236,7 @@ function cargarItem(codigo, cantidad, tamano) {
                 $("#carritoContainer").fadeOut(800);
                 localStorage.clear()})/// luego de la animacion limpio el storage
             })
-    });
-
-
-    
-    
-    //limpio storage y recargo la pagina
-        
+    });     
    
     //pongo visible el div descuento y resumen
     $("#descuento").show();
@@ -270,7 +269,7 @@ function cargarItem(codigo, cantidad, tamano) {
             <button id= "btn${productos[i].codigo}"class="btn btn-success btn-sm"> Comprar </button>
             </div>
             </div>`);
-            //agrego evento al boton creado
+            //agrego evento al boton comprar 
             $(`#btn${productos[i].codigo}`).on('click', function (){
             let listaOrden=[];
             let cod= productos[i].codigo;
@@ -299,24 +298,24 @@ function cargarItem(codigo, cantidad, tamano) {
             $("#carritoContainer").show(2000);
             
         });  
-         //Gener evento de boton aplicar cupon de descuento
+    }
+    //Gener evento de boton aplicar cupon de descuento
     $("#botonDto").on("click", function(){
         let cupon= ($("#inputDto").val()).toUpperCase(); //cupon ingresado por usr
-        let descuento= aplicarCupon(cupon);// porc de descuento otorgado por cupon
+        descuentoCarrito= aplicarCupon(cupon);// porc de descuento otorgado por cupon
         let listaOrden=traerListaStorage();//traigo la orden de storage
-        if(descuento=="0"){
+        if(descuentoCarrito=="0"){
             $("#pDto").html("Cupón inválido");
             $("#pDto").attr("style","color:red");
         }else{
             let monto=calcularMonto(listaOrden);//monto de la orden
-            let totalDescuento= calcularDescuento(monto, descuento);//descuento a aplicar en $
-            let totalFinal= calcularTotal(monto, totalDescuento);
+            let totalDescuento= calcularDescuento(monto);//descuento a aplicar en $
             $("#pDto").html("Cupón aplicado!");
             $("#pDto").attr("style","color:green");
+            cargarTabla(nombre);
+            $("#pieTabla").prepend(`<td>Descuento (${cupon}):</td><td> -$ ${totalDescuento}</td>`)            
         }
     });
-    }
-
     }
 
 
@@ -325,7 +324,8 @@ function cargarItem(codigo, cantidad, tamano) {
 ////////////////////////////////////////Inicialización de Tienda/////////////////////////////////////////////////////////////////////
 
 $(document).ready(function(){
-    mostrarItems(productos);
+    traerProductos(); ///traigo productos de json y los renderizo
+    traerCupones() ///traigo cupones de json
     $("#carritoContainer").hide();
     $("#resumenCompra").hide();
     $("#descuentoContainer").hide();
@@ -347,3 +347,7 @@ function bienvenida() {
     console.log("*CARRITO INICIALIZADO* - Cliente " + nombre)
     return nombre;
 }
+
+
+
+

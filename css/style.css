@@ -565,6 +565,14 @@ div div div ul li {
   display: flex;
 }
 
+.botonTabla {
+  width: 2rem;
+  height: 2rem;
+  background-color: red;
+  border-radius: 0.5rem;
+  border: none;
+}
+
 .contactoContainer {
   display: grid;
   width: 90%;

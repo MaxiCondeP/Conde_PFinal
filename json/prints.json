@@ -1,0 +1,10 @@
+{
+"productos" : [
+    { "codigo": "0001", "descripcion": "", "autor": "", "img": "https://i.ibb.co/DQMWsKP/Maxi-1.jpg" },
+    { "codigo": "0002", "descripcion": "", "autor": "", "img": "https://i.ibb.co/zQrZBN8/Maxi-2.jpg" },
+    { "codigo": "0003", "descripcion": "", "autor": "", "img": "https://i.ibb.co/jh5RKhM/Maxi-3.jpg" },
+    { "codigo": "0004", "descripcion": "", "autor": "", "img": "https://i.ibb.co/0B65yZ8/Maxi-6.jpg" },
+    { "codigo": "0005", "descripcion": "", "autor": "", "img": "https://i.ibb.co/c13S70X/Maxi-5.jpg" },
+    { "codigo": "0006", "descripcion": "", "autor": "", "img": "https://i.ibb.co/0B65yZ8/Maxi-6.jpg" }
+]
+}

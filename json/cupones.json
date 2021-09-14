@@ -1,0 +1,8 @@
+{
+    "cupones":[
+        { "codigo": "DTO10CART", "porcentaje":"10"},
+        { "codigo": "DTO15CART", "porcentaje":"15"},
+        { "codigo": "DTO25CART", "porcentaje":"25"},
+        { "codigo": "DTO50CART", "porcentaje":"50"}
+    ]
+}
