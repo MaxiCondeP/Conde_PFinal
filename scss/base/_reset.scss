@@ -25,9 +25,10 @@ html{
 
   /*Se da estilo al cuerpo de la página*/
   body{
-    background-size: cover;
-    background-repeat: repeat;
-    background-image:$bgd-image;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-image: url("../../Images/bgd.jpg");
+   /// background-color: $bgd-color;
     line-height: 1.5;
 }
 

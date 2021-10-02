@@ -51,44 +51,143 @@
             <!--MENU INICIAL-->
             <div class="miMenu">
                 <p class="cierreMenu">X</p>
-                <div class="miMenuItem"><a href="index.html" class="miEncabezado">HOME</a></div>
-                <div class="miMenuItem"><span class="miEncabezado">GALERIAS</span>
+                <div class="miMenuItem"><a href="index.html" class="miEncabezado">Home</a></div>
+                <div class="miMenuItem"><span class="miEncabezado">Galerias</span>
                     <!--SUBMENU-->
                     <ul>
-                        <li><a href="galeria.html" class="miEncabezado">MAXI</a></li>
-                        <li><a href="galeria2.html" class="miEncabezado">RICARDO</a></li>
+                        <li><a href="galeria.html" class="miEncabezado">Maxi</a></li>
+                        <li><a href="galeria2.html" class="miEncabezado">Ricardo</a></li>
                     </ul>
                 </div>
-                <div class="miMenuItem"><a href="nosotros.html" class="miEncabezado">NOSOTROS</a></div>
-                <div class="miMenuItem"><a href="carrito.html" class="miEncabezado">TIENDA</a></div>
-                <div class="miMenuItem"><a href="contacto.html" class="miEncabezado">CONTACTO</a></div>
+                <div class="miMenuItem"><a href="nosotros.html" class="miEncabezado">Nosotros</a></div>
+                <div class="miMenuItem"><a href="carrito.html" class="miEncabezado">Tienda</a></div>
+                <div class="miMenuItem"><a href="contacto.html" class="miEncabezado">Contacto</a></div>
             </div>
 
         </div>
         <div class="modelLogo">
-            <img src="Images/icon/LOGOcort.png" alt="Logotipo" class="miLogo" data-aos="fade-left" data-aos-delay="700" data-aos-duration="500">
+            <img src="Images/LOGO.png" alt="Logotipo" class="miLogo" data-aos="fade-right" data-aos-delay="700" data-aos-duration="500">
         </div>
 
-
+        
     </header>
     <h1 class="miTitulo" data-aos="fade-in" data-aos-delay="600" data-aos-duration="500">
         Tienda
     </h1>
+   
 
-    <div id="tiendaContainer" class="tiendaContainer"> </div>
+    <div id="resumenCarrito"  class="resumenCarrito" >
 
-    <div id="carritoContainer" class="carritoContainer"></div>
+        <img id="btnCarrito" src="Images/icon/cart.svg"> 
+        <p id="nroCarrito">(0)</p>  
+            <div id="carritoVacio" class="carritoVacio"> 
+                <p>¡TU CARRITO ESTA VACÍO!</p>
+            </div>
 
-    <a id="pPreguntaDesc" style="cursor:pointer">¿Tenés cupón de descuento?</a>
-    <div id="descuentoContainer" class="carritoContainer" >
-        <p id="pDto">EJ: DTO10CART</p>
-        <input id="inputDto"></input>
-        <button id="botonDto" class="btn btn-success btn-sm">Aplicar</button>   
-    </div>
-    
-    <div id="resumenCompra" class="nosotrosContainer">
+            <div id="carritoContainer" class="carritoContainer">   
+                
+            </div>
+                      
+          
   
     </div>
+
+    <div id="tiendaContainer" class="tiendaContainer">        
+    </div>
+
+    <div id="compraContainer" class="finalizarContainer">
+        <h2 class="miTitulo">Carrito</h2>
+        <div id="carritoContainer">
+        </div>
+    </div>
+
+
+ 
+    
+
+    
+    
+    <div id="finalizarCompra" class="finalizarContainer">
+        <h2 >Finalizar Compra</h2>
+
+        <div id="tablaResumen" class="tablaResumen"></div>
+
+            <form id="formFinalizar" class="formularioFinalizarContainer">
+                <div class="formularioFinalizarItem" >
+                    <label for="nombre" >Nombre:</label>
+                    <input  id="iNombre" for="nombre" type="text"  class="inputForm" />
+                    <p id="alertaNombre" class="alertaFormulario">*Campo Obligatorio. Máx 30 caracteres</p>
+                    <label for="apellido">Apellido:</label>
+                    <input id="iApellido" for="apellido" type="text" class="inputForm"  />
+                    <p id="alertaApellido" class="alertaFormulario">*Campo Obligatorio. Máx 30 caracteres</p>
+                    <label for="email">Email:</label>
+                    <input id="iEmail" for="email" type="email"  class="inputForm" />
+                    <p id="alertaEmail" class="alertaFormulario">*Campo Obligatorio. Ingrese un email válido.</p>
+                    <label for="celular">Celular:</label>
+                    <input id="iCelular" for="celular" type="tel"  class="inputForm" />
+                    <p id="alertaCelular" class="alertaFormulario">*Campo Obligatorio. Ingrese su celular(sin 0 ni 15 ).</p>
+                </div>
+                
+                <div class="formularioFinalizarItem" >
+                    <p>-Datos de envío_____</p>
+                    <label for="direccion">Dirección:</label>
+                    <input id="iDireccion" for="direccion"  class="inputForm"  />
+                    <p id="alertaDireccion" class="alertaFormulario">*Campo Obligatorio. Ingrese su dirección.</p>
+                    <label for="ciudad">Ciudad:</label>
+                    <input id="iCiudad" for="ciudad" class="inputForm"  />
+                    <p id="alertaCiudad" class="alertaFormulario">*Campo Obligatorio. Ingrese ciudad.</p>
+                    <label for="cp">C. Postal:</label>
+                    <input id="iCp" for="cp" class="inputForm" />
+                    <p id="alertaCp" class="alertaFormulario">*Campo Obligatorio. Ingrese código postal.</p>
+                </div>   
+                <div class="formularioFinalizarItem" id="divDescuento" >
+                    <a id="pPreguntaDesc" style="cursor:pointer">¿Tenés cupón de descuento?↷</a>
+                    <div id="descuentoContainer"  >
+                        <p id="pDto">EJ: DTO10CART</p>
+                        <input id="inputDto"></input>
+                        <button id="botonDto" class="btn btn-success btn-sm">Aplicar</button>   
+                    </div>
+                </div>
+               
+                <div class="formularioFinalizarItem" id="divPago" >
+                    <p>-Pago_______________</p>
+                    <label for="dni">DNI:</label>
+                    <input id="iDNI" for="dni" type="tel"  class="inputForm" />
+                    <p id="alertaDni" class="alertaFormulario">*Campo Obligatorio. Ingrese su nro de DNI(entre 7 y 8 caracteres ).</p>
+                    <label for="nombreTC">Nombre(en la tarjeta):</label>
+                    <input id="iNombreTC" for="nombreTC" class="inputForm"  />
+                    <p id="alertaNombreTC" class="alertaFormulario">*Campo Obligatorio.Ingrese el Nombre impreso en la tarjeta.</p>
+                    <label for="nroTC">Nro de tarjeta:</label>
+                    <input id="iNroTC" for="nroTC" type="tel" class="inputForm"  />
+                    <p id="alertaNroTC" class="alertaFormulario">*Campo Obligatorio.Ingrese el nro de tarjeta(16 dígitos).</p>
+                    <label for="vencTC">Venc(MMAA):</label>
+                        <input id="iVencTC" for="vencTC" type="tel"   class="inputForm" />
+                        <label for="codigoTC">Código (SVC):</label>
+                        <input id="iCodigoTC" for="codigoTC" type="tel" class="inputForm"  />
+                    <p id="alertaCodVencTC" class="alertaFormulario">*Campos Obligatorios. Ingrese el código de seguridad y vencimiento de la tarjeta.</p>
+                </div>   
+               
+            </form>   
+            <div id="resumenCompra"></div>
+            <div class="formularioFinalizarContainer" id="botonesFinalizar">
+                <div >
+                    <input id="btnCheckout" type="button" value="Continuar">
+                </div>
+                <div >
+                    <input id="btnSeguirComprando" type="button" value="Seguir comprando">
+                </div>
+            </div>
+
+            <!-- solo visibles en la confirmacion final de compra -->
+            <div class="formularioFinalizarContainer" id="botonesConfirmar">
+                <div >
+                    <input id="btnEnviarPedido" type="button" value="Enviar">
+                </div>
+                <div  >
+                    <input id="btnVolverAForm" type="button" value="Volver / Corregir">
+                </div>
+            </div>
+  </div>
 
 
 
@@ -114,6 +213,8 @@
         <p>©Maximiliano Conde Paccelli (2021)</p>
     </footer>
 
+
+    
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -132,5 +233,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script src="js/scriptJQ.js"></script>
+
+   
 
 </html>

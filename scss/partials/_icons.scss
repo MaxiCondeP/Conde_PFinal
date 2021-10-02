@@ -17,19 +17,23 @@
 
 /*Se configura logo de header*/
 .miLogo{
-    @include logo(7rem, unset);
+    @include logo(100%, unset);
+    position: absolute;
+
     box-sizing: content-box;/*Se incluye para corregir defecto generado por Carusel*/ 
-    @media only screen and (max-width: 960px) {
-      @include logo(4rem, unset);
-    }
+    // @media only screen and (max-width: 960px) {
+    //   @include logo(4rem, unset);
+    // }
 }
 
 
 
 .modelLogo{
-  margin: 1rem;
+  left:1rem;
+  top:1rem;
   position: absolute;
-  right:2rem;
+  width: 15%;
+ 
   }
 
   
