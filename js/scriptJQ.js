@@ -477,6 +477,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
 
     let resultado = false;
 
+    //valido nombre
     resultado = validarCant(nombre, 30);
     if (resultado == false) {
         $("#alertaNombre").attr("style", "display: block");
@@ -489,7 +490,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
         }
     }
 
-
+    //valido apellido
     resultado = validarCant(apellido, 30);
     if (resultado == false) {
         $("#alertaApellido").attr("style", "display: block");
@@ -503,6 +504,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
         }
     }
 
+    //valido email
     resultado = validarCant(email, 30);
     if (resultado == false) {
         $("#alertaEmail").attr("style", "display: block");
@@ -515,6 +517,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
         }
     }
 
+    //valido celular
     resultado = validarCant(celular, 10);
     if ((resultado == false) || (celular.length != 10)) {
         $("#alertaCelular").attr("style", "display: block");
@@ -527,6 +530,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
         }
     }
 
+    //valido direccion
     resultado = validarCant(direccion, 100);
     if (resultado == false) {
         $("#alertaDireccion").attr("style", "display: block");
@@ -539,6 +543,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
         }
     }
 
+    //valido ciudad
     resultado = validarCant(ciudad, 100);
     if (resultado == false) {
         $("#alertaCiudad").attr("style", "display: block");
@@ -551,8 +556,9 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
         }
     }
 
+    //valido cod postal
     resultado = validarCant(codPostal, 100);
-    if (resultado == false) {
+    if ((resultado == false)||(codPostal.length<4)) {
         $("#alertaCp").attr("style", "display: block");
          
         return false;
@@ -563,7 +569,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
         }
     }
 
-
+    //valido NombreTC
     resultado = validarCant(nombreTC, 30);
     if (resultado == false) {
         $("#alertaNombreTC").attr("style", "display: block");
@@ -576,6 +582,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
         }
     }
 
+    //valido dni
     resultado = validarCant(dni, 8);
     if ((resultado == false) || (dni.length < 7)) {
         $("#alertaDni").attr("style", "display: block");
@@ -588,6 +595,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
         }
     }
 
+    //valido Tarjeta
     resultado = validarCant(nroTC, 16);
     if ((resultado == false) || (nroTC.length != 16)) {
         $("#alertaNroTC").attr("style", "display: block");
@@ -600,6 +608,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
         }
     }
 
+    //valido vencimiento de tarjeta
     resultado = validarCant(vencTC, 4);
     if (resultado == false) {
         $("#alertaCodVencTC").attr("style", "display: block");
@@ -612,6 +621,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
         }
     }
 
+    //valido svc de tarjeta
     resultado = validarCant(codTC, 4);
     if (resultado == false) {
         $("#alertaCodVencTC").attr("style", "display: block");
@@ -729,7 +739,7 @@ const eventosFormulario = () => { // cargo eventos en inputs para validar dato i
     $("#iCp").on("change", function () {
         let texto = $("#iCp").val();
         let resultado = validarCant(texto, 100);
-        if (resultado == false) {
+        if ((resultado == false)||(codPostal.length<4)){
             $("#alertaCp").attr("style", "display: block");
             return false;
         } else {
