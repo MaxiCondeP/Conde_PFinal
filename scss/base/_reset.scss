@@ -27,7 +27,7 @@ html{
   body{
     background-size:cover;
     background-repeat: no-repeat;
-    background-image: url("../../Images/bgd.jpg");
+    background-image: $bgd-image;
    /// background-color: $bgd-color;
     line-height: 1.5;
 }
