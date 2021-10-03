@@ -263,7 +263,7 @@ const cargarTabla = (nombre) => {
                     { opacity: "+=50%" }, 600, function () {
                         $("#carritoContainer").fadeOut(800);
                         localStorage.clear(), /// luego de la animacion limpio el storage
-                            cargarContador()
+                            cargarContador();
                     })
             })
     });
@@ -339,6 +339,7 @@ const mostrarItems = (productos) => {
                 }
                 localStorage.setItem('carrito', JSON.stringify(listaEnStorage));
             }
+            $("#carritoVacio").hide();/// evito que siga visible el carrito vacio, si agrego un item
             cargarTabla(nombre);
         });
     }
@@ -349,6 +350,23 @@ const cargarContador = () => {
     let cont = contarCantidad(traerListaStorage());//traigo la cantidad de items en carrito
     let textCont = `(${cont})`; //genero string con variable
     $("#nroCarrito").text(textCont);
+
+}
+
+
+const cargarCarrito=()=>{
+    ///Si el carrito está vacío, muestro el div con el msj, sino cargo la tabla.
+    if (traerListaStorage().length == "0") {
+        $("#finalizarCompra").hide();
+        $("#carritoContainer").hide();
+        $("#carritoVacio").slideToggle(1000);
+        // $("#carritoVacio").slideToggle(1000, function () {
+        //     $("#carritoVacio").slideToggle(3000);
+        // });
+    } else {
+        $("#carritovacio").hide();
+        $("#carritoContainer").slideToggle(1000);
+    }
 
 }
 
@@ -379,43 +397,34 @@ const generarEventos = () => { //GENERO EVENTOS AL INICIAR
 
     //genero evento de ícono de carrito
     $("#btnCarrito").on("click", function () {
-        ///Si el carrito está vacío, muestro el div con el msj, sino cargo la tabla.
-        if (traerListaStorage().length == "0") {
-            $("#finalizarCompra").hide();
-            $("#carritoContainer").hide();
-            $("#carritoVacio").slideToggle(1000, function () {
-                $("#carritoVacio").slideToggle(3000);
-            });
-        } else {
-            $("#carritovacio").hide();
-            $("#carritoContainer").slideToggle(1000);
-        }
+        cargarCarrito();
     });
 
 
-
+///Genero evento de boton de cupon de descuento
     $("#pPreguntaDesc").on("click", function () {
         $("#descuentoContainer").slideToggle(1000);
     });
 
 
 
-
+///Genero evento de boton para salir del formulario y volver a la tienda
     $("#btnSeguirComprando").on("click", function () {
         cargarTabla(nombre);
         $("#tiendaContainer").slideToggle(700);
         $("#finalizarCompra").slideToggle(700);
         $(".inputTabla").removeAttr('disabled'); //evito que se modifique el carrito una vez finalizada la compra
-
+        $(window).scrollTop(0);
     });
 
-
+///Genero evento de envío y finalizacion de compra
     $("#btnEnviarPedido").on("click", function(){
         //envío el formulario y vacío el storage
         $("#formFinalizar").submit();
         localStorage.clear();
     });
 
+///Genero evento de btn para volver a modificar algo del formulario, o volver a tienda
     $("#btnVolverAForm").on("click", function(){
         //Vuelvo al mostrar el formulario original, rehabilitando los campos
         $("#formFinalizar").show();
@@ -426,7 +435,13 @@ const generarEventos = () => { //GENERO EVENTOS AL INICIAR
         $("#resumenCompra").empty();
         $("#botonesConfirmar").hide();
         $("#botonesFinalizar").show();
-      
+        $(window).scrollTop(0);
+    });
+
+    
+    $("#btnCheckOut").on("click", function () {
+        ValidacionFinalFormulario();
+        $(window).scrollTop(0);
     });
 
 }
@@ -443,6 +458,8 @@ const validarCant = (texto, cantRequerido) => {
     }
     return resultado;
 }
+
+
 
 const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
     let nombre = $("#iNombre").val();
@@ -463,10 +480,12 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
     resultado = validarCant(nombre, 30);
     if (resultado == false) {
         $("#alertaNombre").attr("style", "display: block");
+         
         return false;
     } else {
         if (resultado == true) {
             $("#alertaNombre").attr("style", "display: none");
+             
         }
     }
 
@@ -474,60 +493,73 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
     resultado = validarCant(apellido, 30);
     if (resultado == false) {
         $("#alertaApellido").attr("style", "display: block");
+         
+        
         return false;
     } else {
         if (resultado == true) {
             $("#alertaApellido").attr("style", "display: none");
+             
         }
     }
 
     resultado = validarCant(email, 30);
     if (resultado == false) {
         $("#alertaEmail").attr("style", "display: block");
+         
         return false;
     } else {
         if (resultado == true) {
             $("#alertaEmail").attr("style", "display: none");
+             
         }
     }
 
     resultado = validarCant(celular, 10);
     if ((resultado == false) || (celular.length != 10)) {
         $("#alertaCelular").attr("style", "display: block");
+         
         return false;
     } else {
         if ((resultado == true) && (celular.length == 10)) {
             $("#alertaCelular").attr("style", "display: none");
+             
         }
     }
 
     resultado = validarCant(direccion, 100);
     if (resultado == false) {
         $("#alertaDireccion").attr("style", "display: block");
+         
         return false;
     } else {
         if (resultado == true) {
             $("#alertaDireccion").attr("style", "display: none");
+             
         }
     }
 
     resultado = validarCant(ciudad, 100);
     if (resultado == false) {
         $("#alertaCiudad").attr("style", "display: block");
+         
         return false;
     } else {
         if (resultado == true) {
             $("#alertaCiudad").attr("style", "display: none");
+             
         }
     }
 
     resultado = validarCant(codPostal, 100);
     if (resultado == false) {
         $("#alertaCp").attr("style", "display: block");
+         
         return false;
     } else {
         if (resultado == true) {
             $("#alertaCp").attr("style", "display: none");
+             
         }
     }
 
@@ -535,50 +567,60 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
     resultado = validarCant(nombreTC, 30);
     if (resultado == false) {
         $("#alertaNombreTC").attr("style", "display: block");
+         
         return false;
     } else {
         if (resultado == true) {
             $("#alertaNombreTC").attr("style", "display: none");
+             
         }
     }
 
     resultado = validarCant(dni, 8);
     if ((resultado == false) || (dni.length < 7)) {
         $("#alertaDni").attr("style", "display: block");
+         
         return false;
     } else {
         if ((resultado == true) && (dni.length >= 7)) {
             $("#alertaDni").attr("style", "display: none");
+             
         }
     }
 
     resultado = validarCant(nroTC, 16);
     if ((resultado == false) || (nroTC.length != 16)) {
         $("#alertaNroTC").attr("style", "display: block");
+         
         return false;
     } else {
         if ((resultado == true) && (nroTC.length == 16)) {
             $("#alertaNroTC").attr("style", "display: none");
+             
         }
     }
 
     resultado = validarCant(vencTC, 4);
     if (resultado == false) {
         $("#alertaCodVencTC").attr("style", "display: block");
+         
         return false;
     } else {
         if (resultado == true) {
             $("#alertaCodVencTC").attr("style", "display: none");
+             
         }
     }
 
     resultado = validarCant(codTC, 4);
     if (resultado == false) {
         $("#alertaCodVencTC").attr("style", "display: block");
+         
         return false;
     } else {
         if (resultado == true) {
             $("#alertaCodVencTC").attr("style", "display: none");
+             
         }
     }
 
@@ -592,13 +634,9 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
     $("#divPago").hide();
     $(".inputForm").attr("class","inputResumen");
     $(".inputResumen").attr("disabled", "disabled");
-
     $(".formularioFinalizarItem").clone().appendTo("#resumenCompra");
- 
-
-
-
-
+    $("#botonesFinalizar").hide();
+    $("#botonesConfirmar").show();
 }
 
 
@@ -772,20 +810,7 @@ const eventosFormulario = () => { // cargo eventos en inputs para validar dato i
 
     });
 
-    $("#btnCheckout").on("click", function () {
-        ValidacionFinalFormulario();
-        $("#botonesFinalizar").hide();
-        $("#botonesConfirmar").show();
-       
-       
-    
-    });
-
 }
-
-
-
-
 
 
 

@@ -29,12 +29,12 @@
 }
 
 .resumenCarrito{
-  width: 40%;
+  width: 50%;
   height:40%;
   display:flex;
   flex-direction: row;
   position: absolute;
-  top: 7rem;
+  top: 5rem;
   right: 0;
   padding: 1rem;
   margin-right: 2rem;
@@ -55,13 +55,17 @@
   p{
     position: absolute;
     top:0;
-   
   }
+
+  @media only screen and (max-width: 960px) {
+    width: 60%;
+ } 
 
 }
 
 
 .carritoContainer{
+  @include text($txt-color, $font-family);
   width: 100%;
   display:flex;
   flex-direction: column;
@@ -71,9 +75,10 @@
   top:1.5rem;
   margin-top: 0.5rem;
   right: 2.5rem;
-  background-color: gray;
+  background-color: black;
   border-radius: 0.5rem;
-  border-style: double;
+  border-style: solid;
+  border-color: #C0392B;
   z-index: 1000;
 
   .tablaCarrito{
@@ -81,7 +86,9 @@
     margin-top: 1rem;
     margin-bottom: 3rem;
     padding:2rem;
-    border-color: black;
+    border-color: #C0392B;
+    color:white;
+
     
   }
   .tituloResumen{
@@ -92,9 +99,9 @@
     z-index: 1000;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-    border-style: solid;
+    border-bottom-style: solid;
     border-width: 0.01rem;
-    border-color: black;
+    border-color: #C0392B;
     p{
       text-align: center;
       width: 100%;
@@ -124,15 +131,21 @@
   height: 3rem;
   top: 1.7rem;
   right: 2.5rem;
-  background-color: gray;
   padding: 1rem; 
+  background-color: black;
   border-radius: 0.5rem;
-  border-style: double;
+  border-style: solid;
+  border-color: #C0392B;
   z-index: 1000;
   display:none;
   p{
     padding:1rem 0 1rem 7rem;
+    @media only screen and (max-width: 960px) {
+      padding: 0;
+   } 
   }
+
+
 
 }
 
@@ -154,8 +167,8 @@
   padding: 5rem;
   display:grid;
   grid-auto-flow: dense;/*Llena todos los espacios en caso de tener elementos de diferente tamaño*/
-  grid-template-columns: repeat(auto-fill , minmax(19rem, 1fr));    
-  grid-auto-rows:25rem;
+  grid-template-columns: repeat(auto-fill , minmax(15rem, 1fr));    
+  grid-auto-rows: 25rem;
   grid-gap:1.5rem;
   z-index: 900;
 
@@ -167,7 +180,9 @@
 
 .imgCarrito{
   width: 100%;
-  object-fit:fill;
+  height: 100%;
+  object-fit:cover;
+  overflow: hidden;
 }
 
 
@@ -223,10 +238,13 @@
 
 
 .inputResumen{
-  @include text($txt-color, $font-family);
+  @include text(gray, $font-family);
+  font-style: italic;
+  font-style:bold;
   background: none; 
   border: none;  
   -webkit-appearance: none;
+  padding-left: 1rem;
   margin: 0;
   input[type=number]::-webkit-inner-spin-button,  //Elimino flechas de input
   input[type=number]::-webkit-outer-spin-button {
@@ -281,3 +299,6 @@
 
 }
 
+// .tiendaItem{
+  
+// }

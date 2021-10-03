@@ -50,11 +50,12 @@ header{
         align-items: flex-start;
         height: 100%;
         opacity: 100%;
+        width: 50%;
         left:-100%;/*Se corre para no ser visible hasta no apretar botón*/
         padding-top: 4rem;
         position: absolute;
         z-index: 1000;
-        background: $bgd-image ;
+        background-color: black; ;
         }
      
       

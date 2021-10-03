@@ -92,12 +92,13 @@ header {
     align-items: flex-start;
     height: 100%;
     opacity: 100%;
+    width: 50%;
     left: -100%;
     /*Se corre para no ser visible hasta no apretar botón*/
     padding-top: 4rem;
     position: absolute;
     z-index: 1000;
-    background: url("....Images\bgd.jpg");
+    background-color: black;
   }
 }
 
@@ -284,7 +285,7 @@ div div div:hover ul {
   text-shadow: 0.05rem 0.05rem #f11717;
   color: white;
   background-color: #464545;
-  top: 1.5rem;
+  top: 2.5rem;
   width: 8rem;
   padding: 0;
 }
@@ -553,12 +554,12 @@ div div div ul li {
 }
 
 .resumenCarrito {
-  width: 40%;
+  width: 50%;
   height: 40%;
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 7rem;
+  top: 5rem;
   right: 0;
   padding: 1rem;
   margin-right: 2rem;
@@ -580,8 +581,15 @@ div div div ul li {
   position: absolute;
   top: 0;
 }
+@media only screen and (max-width: 960px) {
+  .resumenCarrito {
+    width: 60%;
+  }
+}
 
 .carritoContainer {
+  color: white;
+  font-family: "Josefin Sans", "sans-serif";
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -591,9 +599,10 @@ div div div ul li {
   top: 1.5rem;
   margin-top: 0.5rem;
   right: 2.5rem;
-  background-color: gray;
+  background-color: black;
   border-radius: 0.5rem;
-  border-style: double;
+  border-style: solid;
+  border-color: #C0392B;
   z-index: 1000;
 }
 .carritoContainer .tablaCarrito {
@@ -601,7 +610,8 @@ div div div ul li {
   margin-top: 1rem;
   margin-bottom: 3rem;
   padding: 2rem;
-  border-color: black;
+  border-color: #C0392B;
+  color: white;
 }
 .carritoContainer .tituloResumen {
   display: flex;
@@ -611,9 +621,9 @@ div div div ul li {
   z-index: 1000;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  border-style: solid;
+  border-bottom-style: solid;
   border-width: 0.01rem;
-  border-color: black;
+  border-color: #C0392B;
 }
 .carritoContainer .tituloResumen p {
   text-align: center;
@@ -639,15 +649,21 @@ div div div ul li {
   height: 3rem;
   top: 1.7rem;
   right: 2.5rem;
-  background-color: gray;
   padding: 1rem;
+  background-color: black;
   border-radius: 0.5rem;
-  border-style: double;
+  border-style: solid;
+  border-color: #C0392B;
   z-index: 1000;
   display: none;
 }
 .carritoVacio p {
   padding: 1rem 0 1rem 7rem;
+}
+@media only screen and (max-width: 960px) {
+  .carritoVacio p {
+    padding: 0;
+  }
 }
 
 .botonesCarrito {
@@ -669,7 +685,7 @@ div div div ul li {
   display: grid;
   grid-auto-flow: dense;
   /*Llena todos los espacios en caso de tener elementos de diferente tamaño*/
-  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   grid-auto-rows: 25rem;
   grid-gap: 1.5rem;
   z-index: 900;
@@ -680,7 +696,9 @@ div div div ul li {
 
 .imgCarrito {
   width: 100%;
-  object-fit: fill;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .botonTabla {
@@ -733,11 +751,14 @@ div div div ul li {
 }
 
 .inputResumen {
-  color: white;
+  color: gray;
   font-family: "Josefin Sans", "sans-serif";
+  font-style: italic;
+  font-style: bold;
   background: none;
   border: none;
   -webkit-appearance: none;
+  padding-left: 1rem;
   margin: 0;
 }
 .inputResumen input[type=number]::-webkit-inner-spin-button,
@@ -881,7 +902,7 @@ div div div ul li {
   text-decoration-line: underline overline;
   text-decoration-color: #f11717;
   padding: 1rem;
-  margin: 6rem;
+  margin: 4rem 6rem;
   position: absolute;
   right: 0;
   top: 0;
