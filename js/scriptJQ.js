@@ -413,8 +413,10 @@ const generarEventos = () => { //GENERO EVENTOS AL INICIAR
         cargarTabla(nombre);
         $("#tiendaContainer").slideToggle(700);
         $("#finalizarCompra").slideToggle(700);
-        $(".inputTabla").removeAttr('disabled'); //evito que se modifique el carrito una vez finalizada la compra
+        $(".inputTabla").removeAttr('disabled'); //vuelvo a hablilitar botones de la tabla
+        $("#formFinalizar")[0].reset();///Vacio el formulario cuando salgo de él
         $(window).scrollTop(0);
+    
     });
 
 ///Genero evento de envío y finalizacion de compra
@@ -518,7 +520,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
 
     //valido celular
     resultado = validarCant(celular, 10);
-    if ((resultado == false) || (celular.length != 10)) {
+    if ((resultado == false) || (celular.length != 10)|| isNaN(celular)) {
         $("#alertaCelular").attr("style", "display: block");
          
         return false;
@@ -557,7 +559,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
 
     //valido cod postal
     resultado = validarCant(codPostal, 100);
-    if ((resultado == false)||(codPostal.length<4)) {
+    if ((resultado == false)||(codPostal.length<4)|| isNaN(codPostal)) {
         $("#alertaCp").attr("style", "display: block");
          
         return false;
@@ -583,7 +585,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
 
     //valido dni
     resultado = validarCant(dni, 8);
-    if ((resultado == false) || (dni.length < 7)) {
+    if ((resultado == false) || (dni.length < 7)|| isNaN(dni)) {
         $("#alertaDni").attr("style", "display: block");
          
         return false;
@@ -596,7 +598,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
 
     //valido Tarjeta
     resultado = validarCant(nroTC, 16);
-    if ((resultado == false) || (nroTC.length != 16)) {
+    if ((resultado == false) || (nroTC.length != 16)|| isNaN(nroTc)) {
         $("#alertaNroTC").attr("style", "display: block");
          
         return false;
@@ -609,9 +611,8 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
 
     //valido vencimiento de tarjeta
     resultado = validarCant(vencTC, 4);
-    if (resultado == false) {
+    if ((resultado == false)|| isNaN(vencTC)) {
         $("#alertaCodVencTC").attr("style", "display: block");
-         
         return false;
     } else {
         if (resultado == true) {
@@ -622,7 +623,7 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
 
     //valido svc de tarjeta
     resultado = validarCant(codTC, 4);
-    if (resultado == false) {
+    if ((resultado == false)|| isNaN(codTC)) {
         $("#alertaCodVencTC").attr("style", "display: block");
          
         return false;
@@ -694,7 +695,7 @@ const eventosFormulario = () => { // cargo eventos en inputs para validar dato i
     $("#iCelular").on("change", function () {
         let texto = $("#iCelular").val();
         let resultado = validarCant(texto, 10);
-        if ((resultado == false) || (texto.length != 10)) {
+        if ((resultado == false) || (texto.length != 10)|| isNaN(texto)) {
             $("#alertaCelular").attr("style", "display: block");
             return false;
         } else {
@@ -733,7 +734,7 @@ const eventosFormulario = () => { // cargo eventos en inputs para validar dato i
     $("#iCp").on("change", function () {
         let texto = $("#iCp").val();
         let resultado = validarCant(texto, 100);
-        if ((resultado == false)||(codPostal.length<4)){
+        if ((resultado == false)||(texto.length<4)||(isNaN(texto))){
             $("#alertaCp").attr("style", "display: block");
             return false;
         } else {
@@ -761,7 +762,7 @@ const eventosFormulario = () => { // cargo eventos en inputs para validar dato i
     $("#iDNI").on("change", function () {
         let texto = $("#iDNI").val();
         let resultado = validarCant(texto, 8);
-        if ((resultado == false) || (texto.length < 7)) {
+        if ((resultado == false) || (texto.length < 7)|| isNaN(texto)) {
             $("#alertaDni").attr("style", "display: block");
             return false;
         } else {
@@ -774,7 +775,7 @@ const eventosFormulario = () => { // cargo eventos en inputs para validar dato i
     $("#iNroTC").on("change", function () {
         let texto = $("#iNroTC").val();
         let resultado = validarCant(texto, 16);
-        if ((resultado == false) || (texto.length != 16)) {
+        if ((resultado == false) || (texto.length != 16)|| isNaN(texto)) {
             $("#alertaNroTC").attr("style", "display: block");
             return false;
         } else {
@@ -787,7 +788,7 @@ const eventosFormulario = () => { // cargo eventos en inputs para validar dato i
     $("#iVencTC").on("change", function () {
         let texto = $("#iVencTC").val();
         let resultado = validarCant(texto, 4);
-        if (resultado == false) {
+        if ((resultado == false)|| isNaN(texto)) {
             $("#alertaCodVencTC").attr("style", "display: block");
             return false;
         } else {
@@ -800,7 +801,7 @@ const eventosFormulario = () => { // cargo eventos en inputs para validar dato i
     $("#iCodigoTC").on("change", function () {
         let texto = $("#iCodigoTC").val();
         let resultado = validarCant(texto, 4);
-        if (resultado == false) {
+        if((resultado == false)|| isNaN(texto)) {
             $("#alertaCodVencTC").attr("style", "display: block");
             return false;
         } else {
