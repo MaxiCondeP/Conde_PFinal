@@ -506,14 +506,13 @@ const ValidacionFinalFormulario = () => {  ////VALIDO TODOS LOS CAMPOS
 
     //valido email
     resultado = validarCant(email, 30);
-    if (resultado == false) {
+    if ((resultado == false) ||(email.indexOf('@', 0) == -1 || email.indexOf('.', 0) == -1)){
         $("#alertaEmail").attr("style", "display: block");
          
         return false;
     } else {
         if (resultado == true) {
             $("#alertaEmail").attr("style", "display: none");
-             
         }
     }
 
@@ -681,7 +680,7 @@ const eventosFormulario = () => { // cargo eventos en inputs para validar dato i
     $("#iEmail").on("change", function () {
         let texto = $("#iEmail").val();
         let resultado = validarCant(texto, 30);
-        if (resultado == false) {
+        if ((resultado == false) ||(texto.indexOf('@', 0) == -1 || texto.indexOf('.', 0) == -1)){
             $("#alertaEmail").attr("style", "display: block");
             return false;
         } else {
@@ -690,12 +689,7 @@ const eventosFormulario = () => { // cargo eventos en inputs para validar dato i
             }
         }
     });
-    $("#iEmail").blur(function (event) {  ///Utilizo la validacion del tipo de input para detectar que esté bien cargado
-        event.target.checkValidity();
-    }).bind('invalid', function (event) {
-        $("#alertaEmail").attr("style", "display: block");
-        return false;
-    });
+
 
     $("#iCelular").on("change", function () {
         let texto = $("#iCelular").val();
